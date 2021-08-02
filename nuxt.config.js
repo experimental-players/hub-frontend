@@ -33,7 +33,9 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build'
+    '@nuxt/typescript-build',
+    // https://www.npmjs.com/package/@nuxtjs/google-fonts
+    '@nuxtjs/google-fonts'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -53,6 +55,13 @@ export default {
   pwa: {
     manifest: {
       lang: 'en'
+    }
+  },
+
+  googleFonts: {
+    families: {
+      Roboto: true,
+      'Bebas+Neue': true
     }
   },
 
