@@ -1,0 +1,23 @@
+.banner {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+  &-title, .title {
+    font-family: $family-banner;
+  }
+}
+
+.is-neon {
+	text-shadow: 0 0 20px rgba(255, 255, 255, 0.219);
+}
+
+.is-0 {
+	font-size: 50px;
+}
+
+@media screen and (min-width: 590px) {
+	.is-0 {
+		font-size: 100px;
+	}
+}
