@@ -1,5 +1,9 @@
-$family-banner: "Bebas Neue", -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$default-family: -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 
+$family-banner: "Bebas Neue", $default-family;
+$family-sans-serif: "Roboto", $default-family;
+
+// Color palette
 $primary: rgb(111, 0, 255);
 $info: rgb(176, 0, 192);
 $link: rgb(0, 102, 255);
