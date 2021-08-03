@@ -20,6 +20,7 @@
 
 <script>
 import Color from 'chroma-js'
+import { isDistant } from '@/helpers/colors'
 
 export default {
   props: {
@@ -32,27 +33,18 @@ export default {
     }
   },
   computed: {
+    colorEntity () {
+      return Color(this.color ?? 'white')
+    },
     boxStyle () {
       return {
-        background: `linear-gradient(to right, ${this.backgroundColor} 30%, ${this.colorEntity.alpha(0.5)}), ` + (this.image ? `url(${this.image})` : 'transparent')
+        background: `linear-gradient(to right, ${this.colorEntity.hex()} 30%, ${this.colorEntity.alpha(0.5)}), ` + (this.image ? `url(${this.image})` : 'transparent')
       }
     },
     textStyle () {
       return {
-        color: this.foregroundColor
+        color: isDistant(this.colorEntity) ? 'black' : 'white'
       }
-    },
-    colorEntity () {
-      return Color(this.color ?? 'white')
-    },
-    backgroundColor () {
-      return this.colorEntity.hex()
-    },
-    foregroundColor () {
-      if (Color.distance(this.backgroundColor, 'black') > 50) {
-        return 'black'
-      }
-      return 'white'
     }
   }
 }
