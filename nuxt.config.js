@@ -35,7 +35,9 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     // https://www.npmjs.com/package/@nuxtjs/google-fonts
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
+    // https://www.npmjs.com/package/@nuxtjs/style-resources
+    '@nuxtjs/style-resources'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -56,6 +58,13 @@ export default {
     manifest: {
       lang: 'en'
     }
+  },
+
+  styleResources: {
+    scss: [
+      '@/assets/scss/_variables.scss',
+      '@/assets/scss/_functions.scss'
+    ]
   },
 
   googleFonts: {
