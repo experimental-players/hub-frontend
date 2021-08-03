@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="hero is-dark is-medium banner" :style="bannerStyle">
+    <div class="hero is-medium banner" :style="bannerStyle">
       <div class="hero-body">
         <div class="container">
-          <h1 class="title is-0" v-text="section.title" />
+          <h1 class="title is-0" :style="textStyle" v-text="section.title" />
         </div>
       </div>
     </div>
@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import { isDistant } from '@/helpers/colors'
+
 export default {
   computed: {
     section () {
@@ -26,7 +28,12 @@ export default {
     },
     bannerStyle () {
       return {
-        background: `linear-gradient(to right, black 30%, rgba(0, 0, 0, .1)), url(${this.section.image})`
+        background: `linear-gradient(to right, ${this.section.color} 30%, rgba(0, 0, 0, .1)), url(${this.section.image})`
+      }
+    },
+    textStyle () {
+      return {
+        color: isDistant(this.section.color) ? 'black' : 'white'
       }
     }
   }
