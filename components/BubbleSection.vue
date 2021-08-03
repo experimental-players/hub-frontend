@@ -1,5 +1,5 @@
 <template>
-  <div class="main box is-block section my-6" :style="boxStyle">
+  <div class="main box is-block section my-6" :style="[bannerStyle, boxStyle]">
     <div class="columns is-vcentered">
       <div v-if="icon" class="column is-one-fifth">
         <figure class="box is-inline-block has-shadow">
@@ -11,7 +11,7 @@
 
       <div class="column">
         <div class="content">
-          <p class="title is-1" :style="textStyle" v-text="title" />
+          <p class="title is-1" :style="bannerForegroundStyle" v-text="title" />
         </div>
       </div>
     </div>
@@ -20,9 +20,10 @@
 
 <script>
 import Color from 'chroma-js'
-import { isDistant } from '@/helpers/colors'
+import dynamicBanner from '@/mixins/dynamicBanner'
 
 export default {
+  mixins: [dynamicBanner],
   props: {
     icon: String,
     image: String,
@@ -37,15 +38,15 @@ export default {
     colorEntity () {
       return Color(this.color ?? 'white')
     },
+    bannerColor () {
+      return this.colorEntity.hex()
+    },
+    bannerImage () {
+      return this.image
+    },
     boxStyle () {
       return {
-        background: `linear-gradient(to right, ${this.colorEntity.hex()} 30%, ${this.colorEntity.alpha(0.5)}), ` + (this.image ? `url(${this.image})` : 'transparent'),
         boxShadow: this.glow ? `0 10px 40px ${this.colorEntity.alpha(0.7)}` : null
-      }
-    },
-    textStyle () {
-      return {
-        color: isDistant(this.colorEntity) ? 'black' : 'white'
       }
     }
   }

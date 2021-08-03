@@ -3,7 +3,7 @@
     <div class="hero is-medium banner" :style="bannerStyle">
       <div class="hero-body">
         <div class="container">
-          <h1 class="title is-0" :style="textStyle" v-text="section.title" />
+          <h1 class="title is-0" :style="bannerForegroundStyle" v-text="section.title" />
         </div>
       </div>
     </div>
@@ -19,22 +19,19 @@
 </template>
 
 <script>
-import { isDistant } from '@/helpers/colors'
+import dynamicBanner from '@/mixins/dynamicBanner'
 
 export default {
+  mixins: [dynamicBanner],
   computed: {
     section () {
       return this.$store.state.sections.list.filter(section => section.title === this.$route.params.section)[0] ?? null
     },
-    bannerStyle () {
-      return {
-        background: `linear-gradient(to right, ${this.section.color} 30%, rgba(0, 0, 0, .1)), url(${this.section.image})`
-      }
+    bannerColor () {
+      return this.section.color ?? 'black'
     },
-    textStyle () {
-      return {
-        color: isDistant(this.section.color) ? 'black' : 'white'
-      }
+    bannerImage () {
+      return this.section.image ?? null
     }
   }
 }
