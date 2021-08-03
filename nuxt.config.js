@@ -6,6 +6,17 @@ export default {
 
   globalName: 'exp',
 
+  env: {
+    api: {
+      url: process.env.API_URL || '0.0.0.0:8080'
+    }
+  },
+
+  server: {
+    port: process.env.PORT || 80,
+    host: process.env.HOST || 'localhost'
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Welcome!',
@@ -19,6 +30,11 @@ export default {
     link: [
       { rel: 'icon', type: 'image/png', href: '/icon.png' }
     ]
+  },
+
+  cli: {
+    badgeMessages: ['Thank you for being an Experimental Player!'],
+    bannerColor: 'magenta'
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
