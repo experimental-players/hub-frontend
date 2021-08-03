@@ -27,15 +27,14 @@
 </template>
 
 <script>
+import Section from '@/models/Section'
+
 export default {
   data () {
     return {
       items: [
         {
-          title: 'Minecraft',
-          icon: 'https://cdn.icon-icons.com/icons2/2699/PNG/512/minecraft_logo_icon_168974.png',
-          image: 'https://cdnb.artstation.com/p/assets/images/images/013/535/601/large/supawit-oat-fin1.jpg?1540053395',
-          color: '#45fd45',
+          ...new Section('Minecraft', 'https://cdn.icon-icons.com/icons2/2699/PNG/512/minecraft_logo_icon_168974.png', 'https://cdnb.artstation.com/p/assets/images/images/013/535/601/large/supawit-oat-fin1.jpg?1540053395', '#45fd45'),
           glow: true
         },
         {
