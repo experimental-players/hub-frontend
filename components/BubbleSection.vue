@@ -33,10 +33,14 @@ export default {
   },
   computed: {
     boxStyle () {
-      return `background: linear-gradient(to right, ${this.backgroundColor} 30%, ${this.colorEntity.alpha(0.5)}), url(${this.image});`
+      return {
+        background: `linear-gradient(to right, ${this.backgroundColor} 30%, ${this.colorEntity.alpha(0.5)}), ` + (this.image ? `url(${this.image})` : 'transparent')
+      }
     },
     textStyle () {
-      return `color: ${this.foregroundColor};`
+      return {
+        color: this.foregroundColor
+      }
     },
     colorEntity () {
       return Color(this.color ?? 'white')
