@@ -1,7 +1,7 @@
 <template>
   <div class="main box is-block section" :style="boxStyle">
     <div class="columns is-vcentered">
-      <div class="column is-one-fifth">
+      <div v-if="icon" class="column is-one-fifth">
         <figure class="box is-inline-block has-shadow">
           <p class="image is-64x64">
             <img :src="icon">
@@ -39,7 +39,7 @@ export default {
       return `color: ${this.foregroundColor};`
     },
     colorEntity () {
-      return Color(this.color)
+      return Color(this.color ?? 'white')
     },
     backgroundColor () {
       return this.colorEntity.hex()
