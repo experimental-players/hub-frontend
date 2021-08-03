@@ -7,14 +7,6 @@
         </div>
       </div>
     </div>
-
-    <div class="hero is-dark is-bold">
-      <div class="hero-body">
-        <div class="container">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eveniet molestiae totam magni similique iste vel dolore perspiciatis assumenda. Harum doloribus expedita ipsa ipsam commodi fugit eos officia dicta eaque?
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
