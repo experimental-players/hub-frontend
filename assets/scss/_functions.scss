@@ -1,0 +1,3 @@
+@function backgroundToForegroundColor($background-color) {
+  @return invert(grayscale($background-color))
+}
