@@ -1,5 +1,5 @@
 <template>
-  <div class="main box is-block section my-6" :style="[bannerStyle, boxStyle]">
+  <div class="main box is-block section my-6 banner" :style="[bannerStyle, boxStyle]">
     <div class="columns is-vcentered">
       <div v-if="icon" class="column is-one-fifth">
         <figure class="box is-inline-block has-shadow">
@@ -64,8 +64,6 @@ figure.box {
 }
 
 .main {
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position: right center;
 }
 </style>
