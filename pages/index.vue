@@ -35,13 +35,15 @@ export default {
           title: 'Minecraft',
           icon: 'https://cdn.icon-icons.com/icons2/2699/PNG/512/minecraft_logo_icon_168974.png',
           image: 'https://cdnb.artstation.com/p/assets/images/images/013/535/601/large/supawit-oat-fin1.jpg?1540053395',
-          color: '#45fd45'
+          color: '#45fd45',
+          glow: true
         },
         {
           title: 'Discord',
           icon: 'https://www.freepnglogos.com/uploads/discord-logo-png/discord-icon-flat-style-available-svg-png-eps-10.png',
           image: 'https://i.pinimg.com/originals/fd/91/13/fd91131ea693096d6be5e8aa99d18f9e.jpg',
-          color: '#7289da'
+          color: '#7289da',
+          glow: true
         },
         {
           title: 'GitHub',
