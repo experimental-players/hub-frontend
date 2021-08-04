@@ -83,7 +83,7 @@ export default {
 }
 
 .clipped-banner {
-  animation: bannerIntro 1s ease-out forwards;
+  // animation: bannerIntro 1s ease-out forwards;
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
 }
 
