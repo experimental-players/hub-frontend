@@ -13,6 +13,10 @@
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.219);
 }
 
+.is-rounded {
+  border-radius: $radius-large;
+}
+
 .is-0 {
   font-size: 50px;
 }

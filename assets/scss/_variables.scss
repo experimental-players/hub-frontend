@@ -10,4 +10,10 @@ $link: rgb(0, 102, 255);
 $dark: rgb(28, 15, 36);
 
 // Layout
-$spacing-values: ("small": 10px, "medium": 30px, "large": 60px, "intersection": 100px, "negative-intersection": -100px);
+$spacing-values: (
+  "small": 10px,
+  "medium": 30px,
+  "large": 60px,
+  "intersection": 250px,
+  "negative-intersection": -250px
+);
