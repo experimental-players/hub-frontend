@@ -20,16 +20,19 @@ export const state = () => ({
       icon: 'https://www.freepnglogos.com/uploads/discord-logo-png/discord-icon-flat-style-available-svg-png-eps-10.png',
       image: 'https://i.pinimg.com/originals/fd/91/13/fd91131ea693096d6be5e8aa99d18f9e.jpg',
       color: '#7289da',
+      link: new Link('View', '/section/Discord'),
       glow: true
     },
     {
       title: 'GitHub',
       icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png',
       image: 'https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z2l0aHVifGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80',
-      color: 'black'
+      color: 'black',
+      link: new Link('View', '/section/GitHub')
     },
     {
-      title: 'Empty'
+      title: 'Empty',
+      link: new Link('View', '/section/Empty')
     }
   ]
 });
