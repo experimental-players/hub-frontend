@@ -67,8 +67,23 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@keyframes bannerIntro {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .clipped-banner {
+  animation: bannerIntro 1s ease-out forwards;
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
 }
 
