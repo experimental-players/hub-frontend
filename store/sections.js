@@ -1,6 +1,8 @@
 import Section from '@/models/Section';
 import Link from '@/models/Link';
 
+// FIXME: https://github.com/vuex-orm/vuex-orm/issues/255
+
 export const state = () => ({
   list: [
     {
