@@ -39,7 +39,7 @@ export default {
       type: String,
       required: true
     },
-    link: Link,
+    link: [Link, Object],
     glow: Boolean
   },
   computed: {
