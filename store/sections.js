@@ -1,9 +1,16 @@
 import Section from '@/models/Section';
+import Link from '@/models/Link';
 
 export const state = () => ({
   list: [
     {
-      ...new Section('Minecraft', 'https://cdn.icon-icons.com/icons2/2699/PNG/512/minecraft_logo_icon_168974.png', 'https://cdnb.artstation.com/p/assets/images/images/013/535/601/large/supawit-oat-fin1.jpg?1540053395', '#45fd45'),
+      ...new Section(
+        'Minecraft',
+        'https://cdn.icon-icons.com/icons2/2699/PNG/512/minecraft_logo_icon_168974.png',
+        'https://cdnb.artstation.com/p/assets/images/images/013/535/601/large/supawit-oat-fin1.jpg?1540053395',
+        '#45fd45',
+        new Link('View', '/section/Minecraft')
+      ),
       glow: true
     },
     {

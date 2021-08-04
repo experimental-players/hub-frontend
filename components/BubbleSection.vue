@@ -14,6 +14,12 @@
           <p class="title is-1" :style="bannerForegroundStyle" v-text="title" />
         </div>
       </div>
+
+      <div class="column is-one-fifth">
+        <div v-if="link">
+          <nuxt-link :to="link.href" class="button is-light is-medium has-text-bold is-rounded" v-text="link.title" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -21,6 +27,7 @@
 <script>
 import Color from 'chroma-js'
 import dynamicBanner from '@/mixins/dynamicBanner'
+import Link from '@/models/Link'
 
 export default {
   mixins: [dynamicBanner],
@@ -32,6 +39,7 @@ export default {
       type: String,
       required: true
     },
+    link: Link,
     glow: Boolean
   },
   computed: {
