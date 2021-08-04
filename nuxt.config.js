@@ -77,6 +77,12 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
+      name: 'Experimental Players HUB',
+      description: 'Keep yourself updated on the best tools for gamers and developers.',
+      short_name: 'Exp Hub',
+      display: 'standalone',
+      theme_color: '#000000',
+      background_color: '#FFFFFF',
       lang: 'en'
     }
   },
