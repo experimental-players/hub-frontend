@@ -1,23 +1,42 @@
 .banner {
-	background-position: center;
-	background-repeat: no-repeat !important;
-	background-size: cover !important;
+  background-position: center;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 
-  &-title, .title {
+  &-title,
+  .title {
     font-family: $family-banner;
   }
 }
 
 .is-neon {
-	text-shadow: 0 0 20px rgba(255, 255, 255, 0.219);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.219);
 }
 
 .is-0 {
-	font-size: 50px;
+  font-size: 50px;
 }
 
 @media screen and (min-width: 590px) {
-	.is-0 {
-		font-size: 100px;
-	}
+  .is-0 {
+    font-size: 100px;
+  }
+}
+
+body {
+  &::-webkit-scrollbar {
+    width: 14px;
+    padding: 2px;
+
+    &-track {
+      background: $dark;
+    }
+
+    &-thumb {
+      background-clip: padding-box;
+      background: linear-gradient(to bottom, $primary, darken($primary, .8));
+      box-shadow: 0 0 20px 20px transparentize($primary, 0);
+      border-radius: 0;
+    }
+  }
 }
