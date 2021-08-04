@@ -1,4 +1,20 @@
-# exp-hub-frontend
+<div style="text-align: center;">
+  <img src="https://static.experimentalplayers.org/logo.png" height="100" width="100" alt="EXP HUB" />
+  
+  [Visit the site](https://experimentalplayers.org/)
+
+  [![ci](https://github.com/experimental-players/hub-frontend/actions/workflows/ci.yml/badge.svg)](https://github.com/experimental-players/hub-frontend/actions/workflows/ci.yml)
+  [![GitHub release](https://img.shields.io/github/release/experimental-players/hub-frontend.svg)](https://GitHub.com/experimental-players/hub-frontend/releases/)
+
+  [![GitHub license](https://img.shields.io/github/license/experimental-players/hub-frontend?color=white)](https://github.com/experimental-players/hub-frontend)
+
+  [![GitHub issues](https://img.shields.io/github/issues/experimental-players/hub-frontend)](https://github.com/experimental-players/hub-frontend/issues)
+  [![GitHub forks](https://img.shields.io/github/forks/experimental-players/hub-frontend)](https://github.com/experimental-players/hub-frontend/network)
+
+
+</div>
+
+___
 
 ## Build Setup
 
