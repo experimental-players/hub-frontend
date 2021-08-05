@@ -101,6 +101,8 @@ export default {
     }
   },
 
+  loading: '@/components/Loading',
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
