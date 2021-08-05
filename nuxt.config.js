@@ -6,7 +6,7 @@ export default {
 
   buildDir: 'bundle',
 
-  globalName: 'exp',
+  globalName: 'app',
 
   env: {
     api: {
