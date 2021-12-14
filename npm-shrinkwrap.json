@@ -35,7 +35,8 @@
         "sass-loader": "^10.2.0",
         "ts-jest": "^27.0.3",
         "typescript": "^4.3.5",
-        "vue-jest": "^3.0.4"
+        "vue-jest": "^3.0.4",
+        "vuex-property-decorators": "^0.1.0"
       }
     },
     "node_modules/@babel/code-frame": {
@@ -20068,6 +20069,16 @@
       "resolved": "https://registry.npmjs.org/vue/-/vue-2.6.14.tgz",
       "integrity": "sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ=="
     },
+    "node_modules/vue-class-component": {
+      "version": "7.2.6",
+      "resolved": "https://registry.npmjs.org/vue-class-component/-/vue-class-component-7.2.6.tgz",
+      "integrity": "sha512-+eaQXVrAm/LldalI272PpDe3+i4mPis0ORiMYxF6Ae4hyuCh15W8Idet7wPUEs4N4YptgFHGys4UrgNQOMyO6w==",
+      "dev": true,
+      "peer": true,
+      "peerDependencies": {
+        "vue": "^2.0.0"
+      }
+    },
     "node_modules/vue-client-only": {
       "version": "2.1.0",
       "resolved": "https://registry.npmjs.org/vue-client-only/-/vue-client-only-2.1.0.tgz",
@@ -20269,6 +20280,17 @@
       "integrity": "sha512-ETW44IqCgBpVomy520DT5jf8n0zoCac+sxWnn+hMe/CzaSejb/eVw2YToiXYX+Ex/AuHHia28vWTq4goAexFbw==",
       "peerDependencies": {
         "vue": "^2.0.0"
+      }
+    },
+    "node_modules/vuex-property-decorators": {
+      "version": "0.1.0",
+      "resolved": "https://registry.npmjs.org/vuex-property-decorators/-/vuex-property-decorators-0.1.0.tgz",
+      "integrity": "sha512-knoVyRRFL1piswCmE23llBnHzl2ZuvbBFT1bvQ5ykNPSDgJN7t6aWmiWpRQ8uEIXCMgHssKBeWYQ1jCDEGbraQ==",
+      "dev": true,
+      "peerDependencies": {
+        "vue": "^2.0.0",
+        "vue-class-component": "^7.0.0",
+        "vuex": "^3.0.0"
       }
     },
     "node_modules/w3c-hr-time": {
@@ -37112,6 +37134,14 @@
       "resolved": "https://registry.npmjs.org/vue/-/vue-2.6.14.tgz",
       "integrity": "sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ=="
     },
+    "vue-class-component": {
+      "version": "7.2.6",
+      "resolved": "https://registry.npmjs.org/vue-class-component/-/vue-class-component-7.2.6.tgz",
+      "integrity": "sha512-+eaQXVrAm/LldalI272PpDe3+i4mPis0ORiMYxF6Ae4hyuCh15W8Idet7wPUEs4N4YptgFHGys4UrgNQOMyO6w==",
+      "dev": true,
+      "peer": true,
+      "requires": {}
+    },
     "vue-client-only": {
       "version": "2.1.0",
       "resolved": "https://registry.npmjs.org/vue-client-only/-/vue-client-only-2.1.0.tgz",
@@ -37282,6 +37312,13 @@
       "version": "3.6.2",
       "resolved": "https://registry.npmjs.org/vuex/-/vuex-3.6.2.tgz",
       "integrity": "sha512-ETW44IqCgBpVomy520DT5jf8n0zoCac+sxWnn+hMe/CzaSejb/eVw2YToiXYX+Ex/AuHHia28vWTq4goAexFbw==",
+      "requires": {}
+    },
+    "vuex-property-decorators": {
+      "version": "0.1.0",
+      "resolved": "https://registry.npmjs.org/vuex-property-decorators/-/vuex-property-decorators-0.1.0.tgz",
+      "integrity": "sha512-knoVyRRFL1piswCmE23llBnHzl2ZuvbBFT1bvQ5ykNPSDgJN7t6aWmiWpRQ8uEIXCMgHssKBeWYQ1jCDEGbraQ==",
+      "dev": true,
       "requires": {}
     },
     "w3c-hr-time": {
