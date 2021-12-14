@@ -1,5 +1,5 @@
 import { GetterTree } from 'vuex'
-import Project from '~/models/Project'
+import Project from '@/models/Project'
 
 export const state = () => ({
   list: [] as Project[]
