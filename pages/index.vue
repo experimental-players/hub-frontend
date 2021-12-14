@@ -31,7 +31,8 @@ import { mapGetters } from 'vuex'
 
 export default {
   computed: {
-    ...mapGetters('sections', ['everySection'])
+    ...mapGetters('sections', ['everySection']),
+    ...mapGetters('projects', ['all'])
   }
 }
 </script>
