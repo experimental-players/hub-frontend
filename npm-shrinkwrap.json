@@ -35,7 +35,8 @@
         "sass-loader": "^10.2.0",
         "ts-jest": "^27.0.3",
         "typescript": "^4.3.5",
-        "vue-jest": "^3.0.4"
+        "vue-jest": "^3.0.4",
+        "vuex-module-decorators": "^2.0.0"
       }
     },
     "node_modules/@babel/code-frame": {
@@ -324,9 +325,15 @@
       }
     },
     "node_modules/@babel/parser": {
-      "version": "7.14.9",
-      "resolved": "https://registry.npmjs.org/@babel/parser/-/parser-7.14.9.tgz",
-      "integrity": "sha512-RdUTOseXJ8POjjOeEBEvNMIZU/nm4yu2rufRkcibzkkg7DmQvXU8v3M4Xk9G7uuI86CDGkKcuDWgioqZm+mScQ=="
+      "version": "7.16.5",
+      "resolved": "https://registry.npmjs.org/@babel/parser/-/parser-7.16.5.tgz",
+      "integrity": "sha512-+Ce7T5iPNWzfu9C1aB5tN3Lyafs5xb3Ic7vBWyZL2KXT3QSdD1dD3CvgOzPmQKoNNRt6uauc0XwNJTQtXC2/Mw==",
+      "bin": {
+        "parser": "bin/babel-parser.js"
+      },
+      "engines": {
+        "node": ">=6.0.0"
+      }
     },
     "node_modules/@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining": {
       "version": "7.14.5",
@@ -2395,6 +2402,19 @@
         "vuex": "^3.6.2"
       }
     },
+    "node_modules/@nuxt/vue-app/node_modules/vue": {
+      "version": "2.6.14",
+      "resolved": "https://registry.npmjs.org/vue/-/vue-2.6.14.tgz",
+      "integrity": "sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ=="
+    },
+    "node_modules/@nuxt/vue-app/node_modules/vuex": {
+      "version": "3.6.2",
+      "resolved": "https://registry.npmjs.org/vuex/-/vuex-3.6.2.tgz",
+      "integrity": "sha512-ETW44IqCgBpVomy520DT5jf8n0zoCac+sxWnn+hMe/CzaSejb/eVw2YToiXYX+Ex/AuHHia28vWTq4goAexFbw==",
+      "peerDependencies": {
+        "vue": "^2.0.0"
+      }
+    },
     "node_modules/@nuxt/vue-renderer": {
       "version": "2.15.7",
       "resolved": "https://registry.npmjs.org/@nuxt/vue-renderer/-/vue-renderer-2.15.7.tgz",
@@ -2417,6 +2437,11 @@
       "version": "4.0.1",
       "resolved": "https://registry.npmjs.org/defu/-/defu-4.0.1.tgz",
       "integrity": "sha512-lC+G0KvvWRbisQa50+iFelm3/eMmwo4IlBmfASOVlw9MZpHHyQeVsZxc5j23+TQy5ydgEoTVSrWl7ptou1kzJQ=="
+    },
+    "node_modules/@nuxt/vue-renderer/node_modules/vue": {
+      "version": "2.6.14",
+      "resolved": "https://registry.npmjs.org/vue/-/vue-2.6.14.tgz",
+      "integrity": "sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ=="
     },
     "node_modules/@nuxt/webpack": {
       "version": "2.15.7",
@@ -3369,6 +3394,99 @@
         "camelcase": "^5.0.0"
       }
     },
+    "node_modules/@vue/compiler-core": {
+      "version": "3.2.26",
+      "resolved": "https://registry.npmjs.org/@vue/compiler-core/-/compiler-core-3.2.26.tgz",
+      "integrity": "sha512-N5XNBobZbaASdzY9Lga2D9Lul5vdCIOXvUMd6ThcN8zgqQhPKfCV+wfAJNNJKQkSHudnYRO2gEB+lp0iN3g2Tw==",
+      "dev": true,
+      "peer": true,
+      "dependencies": {
+        "@babel/parser": "^7.16.4",
+        "@vue/shared": "3.2.26",
+        "estree-walker": "^2.0.2",
+        "source-map": "^0.6.1"
+      }
+    },
+    "node_modules/@vue/compiler-core/node_modules/source-map": {
+      "version": "0.6.1",
+      "resolved": "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz",
+      "integrity": "sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==",
+      "dev": true,
+      "peer": true,
+      "engines": {
+        "node": ">=0.10.0"
+      }
+    },
+    "node_modules/@vue/compiler-dom": {
+      "version": "3.2.26",
+      "resolved": "https://registry.npmjs.org/@vue/compiler-dom/-/compiler-dom-3.2.26.tgz",
+      "integrity": "sha512-smBfaOW6mQDxcT3p9TKT6mE22vjxjJL50GFVJiI0chXYGU/xzC05QRGrW3HHVuJrmLTLx5zBhsZ2dIATERbarg==",
+      "dev": true,
+      "peer": true,
+      "dependencies": {
+        "@vue/compiler-core": "3.2.26",
+        "@vue/shared": "3.2.26"
+      }
+    },
+    "node_modules/@vue/compiler-sfc": {
+      "version": "3.2.26",
+      "resolved": "https://registry.npmjs.org/@vue/compiler-sfc/-/compiler-sfc-3.2.26.tgz",
+      "integrity": "sha512-ePpnfktV90UcLdsDQUh2JdiTuhV0Skv2iYXxfNMOK/F3Q+2BO0AulcVcfoksOpTJGmhhfosWfMyEaEf0UaWpIw==",
+      "dev": true,
+      "peer": true,
+      "dependencies": {
+        "@babel/parser": "^7.16.4",
+        "@vue/compiler-core": "3.2.26",
+        "@vue/compiler-dom": "3.2.26",
+        "@vue/compiler-ssr": "3.2.26",
+        "@vue/reactivity-transform": "3.2.26",
+        "@vue/shared": "3.2.26",
+        "estree-walker": "^2.0.2",
+        "magic-string": "^0.25.7",
+        "postcss": "^8.1.10",
+        "source-map": "^0.6.1"
+      }
+    },
+    "node_modules/@vue/compiler-sfc/node_modules/postcss": {
+      "version": "8.4.5",
+      "resolved": "https://registry.npmjs.org/postcss/-/postcss-8.4.5.tgz",
+      "integrity": "sha512-jBDboWM8qpaqwkMwItqTQTiFikhs/67OYVvblFFTM7MrZjt6yMKd6r2kgXizEbTTljacm4NldIlZnhbjr84QYg==",
+      "dev": true,
+      "peer": true,
+      "dependencies": {
+        "nanoid": "^3.1.30",
+        "picocolors": "^1.0.0",
+        "source-map-js": "^1.0.1"
+      },
+      "engines": {
+        "node": "^10 || ^12 || >=14"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/postcss/"
+      }
+    },
+    "node_modules/@vue/compiler-sfc/node_modules/source-map": {
+      "version": "0.6.1",
+      "resolved": "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz",
+      "integrity": "sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==",
+      "dev": true,
+      "peer": true,
+      "engines": {
+        "node": ">=0.10.0"
+      }
+    },
+    "node_modules/@vue/compiler-ssr": {
+      "version": "3.2.26",
+      "resolved": "https://registry.npmjs.org/@vue/compiler-ssr/-/compiler-ssr-3.2.26.tgz",
+      "integrity": "sha512-2mywLX0ODc4Zn8qBoA2PDCsLEZfpUGZcyoFRLSOjyGGK6wDy2/5kyDOWtf0S0UvtoyVq95OTSGIALjZ4k2q/ag==",
+      "dev": true,
+      "peer": true,
+      "dependencies": {
+        "@vue/compiler-dom": "3.2.26",
+        "@vue/shared": "3.2.26"
+      }
+    },
     "node_modules/@vue/component-compiler-utils": {
       "version": "3.2.2",
       "resolved": "https://registry.npmjs.org/@vue/component-compiler-utils/-/component-compiler-utils-3.2.2.tgz",
@@ -3410,6 +3528,81 @@
       "version": "2.1.2",
       "resolved": "https://registry.npmjs.org/yallist/-/yallist-2.1.2.tgz",
       "integrity": "sha1-HBH5IY8HYImkfdUS+TxmmaaoHVI="
+    },
+    "node_modules/@vue/devtools-api": {
+      "version": "6.0.0-beta.20.1",
+      "resolved": "https://registry.npmjs.org/@vue/devtools-api/-/devtools-api-6.0.0-beta.20.1.tgz",
+      "integrity": "sha512-R2rfiRY+kZugzWh9ZyITaovx+jpU4vgivAEAiz80kvh3yviiTU3CBuGuyWpSwGz9/C7TkSWVM/FtQRGlZ16n8Q==",
+      "dev": true,
+      "peer": true
+    },
+    "node_modules/@vue/reactivity": {
+      "version": "3.2.26",
+      "resolved": "https://registry.npmjs.org/@vue/reactivity/-/reactivity-3.2.26.tgz",
+      "integrity": "sha512-h38bxCZLW6oFJVDlCcAiUKFnXI8xP8d+eO0pcDxx+7dQfSPje2AO6M9S9QO6MrxQB7fGP0DH0dYQ8ksf6hrXKQ==",
+      "dev": true,
+      "peer": true,
+      "dependencies": {
+        "@vue/shared": "3.2.26"
+      }
+    },
+    "node_modules/@vue/reactivity-transform": {
+      "version": "3.2.26",
+      "resolved": "https://registry.npmjs.org/@vue/reactivity-transform/-/reactivity-transform-3.2.26.tgz",
+      "integrity": "sha512-XKMyuCmzNA7nvFlYhdKwD78rcnmPb7q46uoR00zkX6yZrUmcCQ5OikiwUEVbvNhL5hBJuvbSO95jB5zkUon+eQ==",
+      "dev": true,
+      "peer": true,
+      "dependencies": {
+        "@babel/parser": "^7.16.4",
+        "@vue/compiler-core": "3.2.26",
+        "@vue/shared": "3.2.26",
+        "estree-walker": "^2.0.2",
+        "magic-string": "^0.25.7"
+      }
+    },
+    "node_modules/@vue/runtime-core": {
+      "version": "3.2.26",
+      "resolved": "https://registry.npmjs.org/@vue/runtime-core/-/runtime-core-3.2.26.tgz",
+      "integrity": "sha512-BcYi7qZ9Nn+CJDJrHQ6Zsmxei2hDW0L6AB4vPvUQGBm2fZyC0GXd/4nVbyA2ubmuhctD5RbYY8L+5GUJszv9mQ==",
+      "dev": true,
+      "peer": true,
+      "dependencies": {
+        "@vue/reactivity": "3.2.26",
+        "@vue/shared": "3.2.26"
+      }
+    },
+    "node_modules/@vue/runtime-dom": {
+      "version": "3.2.26",
+      "resolved": "https://registry.npmjs.org/@vue/runtime-dom/-/runtime-dom-3.2.26.tgz",
+      "integrity": "sha512-dY56UIiZI+gjc4e8JQBwAifljyexfVCkIAu/WX8snh8vSOt/gMSEGwPRcl2UpYpBYeyExV8WCbgvwWRNt9cHhQ==",
+      "dev": true,
+      "peer": true,
+      "dependencies": {
+        "@vue/runtime-core": "3.2.26",
+        "@vue/shared": "3.2.26",
+        "csstype": "^2.6.8"
+      }
+    },
+    "node_modules/@vue/server-renderer": {
+      "version": "3.2.26",
+      "resolved": "https://registry.npmjs.org/@vue/server-renderer/-/server-renderer-3.2.26.tgz",
+      "integrity": "sha512-Jp5SggDUvvUYSBIvYEhy76t4nr1vapY/FIFloWmQzn7UxqaHrrBpbxrqPcTrSgGrcaglj0VBp22BKJNre4aA1w==",
+      "dev": true,
+      "peer": true,
+      "dependencies": {
+        "@vue/compiler-ssr": "3.2.26",
+        "@vue/shared": "3.2.26"
+      },
+      "peerDependencies": {
+        "vue": "3.2.26"
+      }
+    },
+    "node_modules/@vue/shared": {
+      "version": "3.2.26",
+      "resolved": "https://registry.npmjs.org/@vue/shared/-/shared-3.2.26.tgz",
+      "integrity": "sha512-vPV6Cq+NIWbH5pZu+V+2QHE9y1qfuTq49uNWw4f7FDEeZaDU2H2cx5jcUZOAKW7qTrUS4k6qZPbMy1x4N96nbA==",
+      "dev": true,
+      "peer": true
     },
     "node_modules/@vue/test-utils": {
       "version": "1.2.2",
@@ -5769,6 +5962,13 @@
       "integrity": "sha512-b0tGHbfegbhPJpxpiBPU2sCkigAqtM9O121le6bbOlgyV+NyGyCmVfJ6QW9eRjz8CpNfWEOYBIMIGRYkLwsIYg==",
       "dev": true
     },
+    "node_modules/csstype": {
+      "version": "2.6.19",
+      "resolved": "https://registry.npmjs.org/csstype/-/csstype-2.6.19.tgz",
+      "integrity": "sha512-ZVxXaNy28/k3kJg0Fou5MiYpp88j7H9hLZp8PDC3jV0WFjfH5E9xHb56L0W59cPbKbcHXeP4qyT8PrHp8t6LcQ==",
+      "dev": true,
+      "peer": true
+    },
     "node_modules/cuint": {
       "version": "0.2.2",
       "resolved": "https://registry.npmjs.org/cuint/-/cuint-0.2.2.tgz",
@@ -7013,6 +7213,13 @@
       "version": "4.3.0",
       "resolved": "https://registry.npmjs.org/estraverse/-/estraverse-4.3.0.tgz",
       "integrity": "sha512-39nnKffWz8xN1BU/2c79n9nB9HDzo0niYUqx6xyqUnyoAnQyyWpOTdZEeiCch8BBu515t4wp9ZmgVfVhn9EBpw=="
+    },
+    "node_modules/estree-walker": {
+      "version": "2.0.2",
+      "resolved": "https://registry.npmjs.org/estree-walker/-/estree-walker-2.0.2.tgz",
+      "integrity": "sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==",
+      "dev": true,
+      "peer": true
     },
     "node_modules/esutils": {
       "version": "2.0.3",
@@ -10635,6 +10842,16 @@
         "yallist": "^3.0.2"
       }
     },
+    "node_modules/magic-string": {
+      "version": "0.25.7",
+      "resolved": "https://registry.npmjs.org/magic-string/-/magic-string-0.25.7.tgz",
+      "integrity": "sha512-4CrMT5DOHTDk4HYDlzmwu4FVCcIYI8gauveasrdCu2IKIFOJ3f0v/8MDGJCDL9oD2ppz/Av1b0Nj345H9M+XIA==",
+      "dev": true,
+      "peer": true,
+      "dependencies": {
+        "sourcemap-codec": "^1.4.4"
+      }
+    },
     "node_modules/make-dir": {
       "version": "3.1.0",
       "resolved": "https://registry.npmjs.org/make-dir/-/make-dir-3.1.0.tgz",
@@ -10965,9 +11182,15 @@
       "optional": true
     },
     "node_modules/nanoid": {
-      "version": "3.1.23",
-      "resolved": "https://registry.npmjs.org/nanoid/-/nanoid-3.1.23.tgz",
-      "integrity": "sha512-FiB0kzdP0FFVGDKlRLEQ1BgDzU87dy5NnzjeW9YZNt+/c3+q82EQDUwniSAUxp/F0gFNI1ZhKU1FqYsMuqZVnw=="
+      "version": "3.1.30",
+      "resolved": "https://registry.npmjs.org/nanoid/-/nanoid-3.1.30.tgz",
+      "integrity": "sha512-zJpuPDwOv8D2zq2WRoMe1HsfZthVewpel9CAvTfc/2mBD1uUT/agc5f7GHGWXlYkFvi1mVxe4IjvP2HNrop7nQ==",
+      "bin": {
+        "nanoid": "bin/nanoid.cjs"
+      },
+      "engines": {
+        "node": "^10 || ^12 || ^13.7 || ^14 || >=15.0.1"
+      }
     },
     "node_modules/nanomatch": {
       "version": "1.2.13",
@@ -11672,6 +11895,13 @@
         "safe-buffer": "^5.0.1",
         "sha.js": "^2.4.8"
       }
+    },
+    "node_modules/picocolors": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/picocolors/-/picocolors-1.0.0.tgz",
+      "integrity": "sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==",
+      "dev": true,
+      "peer": true
     },
     "node_modules/picomatch": {
       "version": "2.3.0",
@@ -13953,6 +14183,16 @@
       "resolved": "https://registry.npmjs.org/source-map/-/source-map-0.5.7.tgz",
       "integrity": "sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w="
     },
+    "node_modules/source-map-js": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/source-map-js/-/source-map-js-1.0.1.tgz",
+      "integrity": "sha512-4+TN2b3tqOCd/kaGRJ/sTYA0tR0mdXx26ipdolxcwtJVqEnqNYvlCAt1q3ypy4QMlYus+Zh34RNtYLoq2oQ4IA==",
+      "dev": true,
+      "peer": true,
+      "engines": {
+        "node": ">=0.10.0"
+      }
+    },
     "node_modules/source-map-resolve": {
       "version": "0.5.3",
       "resolved": "https://registry.npmjs.org/source-map-resolve/-/source-map-resolve-0.5.3.tgz",
@@ -13983,6 +14223,13 @@
       "version": "0.4.1",
       "resolved": "https://registry.npmjs.org/source-map-url/-/source-map-url-0.4.1.tgz",
       "integrity": "sha512-cPiFOTLUKvJFIg4SKVScy4ilPPW6rFgMgfuZJPNoDuMs3nC1HbMUycBoJw77xFIp6z1UJQJOfx6C9GMH80DiTw=="
+    },
+    "node_modules/sourcemap-codec": {
+      "version": "1.4.8",
+      "resolved": "https://registry.npmjs.org/sourcemap-codec/-/sourcemap-codec-1.4.8.tgz",
+      "integrity": "sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==",
+      "dev": true,
+      "peer": true
     },
     "node_modules/spdx-correct": {
       "version": "3.1.1",
@@ -15310,9 +15557,18 @@
       "integrity": "sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ=="
     },
     "node_modules/vue": {
-      "version": "2.6.14",
-      "resolved": "https://registry.npmjs.org/vue/-/vue-2.6.14.tgz",
-      "integrity": "sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ=="
+      "version": "3.2.26",
+      "resolved": "https://registry.npmjs.org/vue/-/vue-3.2.26.tgz",
+      "integrity": "sha512-KD4lULmskL5cCsEkfhERVRIOEDrfEL9CwAsLYpzptOGjaGFNWo3BQ9g8MAb7RaIO71rmVOziZ/uEN/rHwcUIhg==",
+      "dev": true,
+      "peer": true,
+      "dependencies": {
+        "@vue/compiler-dom": "3.2.26",
+        "@vue/compiler-sfc": "3.2.26",
+        "@vue/runtime-dom": "3.2.26",
+        "@vue/server-renderer": "3.2.26",
+        "@vue/shared": "3.2.26"
+      }
     },
     "node_modules/vue-client-only": {
       "version": "2.1.0",
@@ -15507,9 +15763,33 @@
       "integrity": "sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw=="
     },
     "node_modules/vuex": {
-      "version": "3.6.2",
-      "resolved": "https://registry.npmjs.org/vuex/-/vuex-3.6.2.tgz",
-      "integrity": "sha512-ETW44IqCgBpVomy520DT5jf8n0zoCac+sxWnn+hMe/CzaSejb/eVw2YToiXYX+Ex/AuHHia28vWTq4goAexFbw=="
+      "version": "4.0.2",
+      "resolved": "https://registry.npmjs.org/vuex/-/vuex-4.0.2.tgz",
+      "integrity": "sha512-M6r8uxELjZIK8kTKDGgZTYX/ahzblnzC4isU1tpmEuOIIKmV+TRdc+H4s8ds2NuZ7wpUTdGRzJRtoj+lI+pc0Q==",
+      "dev": true,
+      "peer": true,
+      "dependencies": {
+        "@vue/devtools-api": "^6.0.0-beta.11"
+      },
+      "peerDependencies": {
+        "vue": "^3.0.2"
+      }
+    },
+    "node_modules/vuex-module-decorators": {
+      "version": "2.0.0",
+      "resolved": "https://registry.npmjs.org/vuex-module-decorators/-/vuex-module-decorators-2.0.0.tgz",
+      "integrity": "sha512-awfjlJR9PlX2tDNzRk5fUnksO4TC5Z93Q3ZycvROCiLId7MZ1GdY4sHpEvPqm02UZ8jF+BkuyN5ezghOAk3zeQ==",
+      "dev": true,
+      "hasInstallScript": true,
+      "engines": {
+        "node": ">= 8",
+        "npm": ">= 5",
+        "yarn": ">= 1"
+      },
+      "peerDependencies": {
+        "vue": ">=3",
+        "vuex": ">=4"
+      }
     },
     "node_modules/w3c-hr-time": {
       "version": "1.0.2",
@@ -16937,9 +17217,9 @@
       }
     },
     "@babel/parser": {
-      "version": "7.14.9",
-      "resolved": "https://registry.npmjs.org/@babel/parser/-/parser-7.14.9.tgz",
-      "integrity": "sha512-RdUTOseXJ8POjjOeEBEvNMIZU/nm4yu2rufRkcibzkkg7DmQvXU8v3M4Xk9G7uuI86CDGkKcuDWgioqZm+mScQ=="
+      "version": "7.16.5",
+      "resolved": "https://registry.npmjs.org/@babel/parser/-/parser-7.16.5.tgz",
+      "integrity": "sha512-+Ce7T5iPNWzfu9C1aB5tN3Lyafs5xb3Ic7vBWyZL2KXT3QSdD1dD3CvgOzPmQKoNNRt6uauc0XwNJTQtXC2/Mw=="
     },
     "@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining": {
       "version": "7.14.5",
@@ -19046,6 +19326,19 @@
         "vue-router": "^3.5.1",
         "vue-template-compiler": "^2.6.12",
         "vuex": "^3.6.2"
+      },
+      "dependencies": {
+        "vue": {
+          "version": "2.6.14",
+          "resolved": "https://registry.npmjs.org/vue/-/vue-2.6.14.tgz",
+          "integrity": "sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ=="
+        },
+        "vuex": {
+          "version": "3.6.2",
+          "resolved": "https://registry.npmjs.org/vuex/-/vuex-3.6.2.tgz",
+          "integrity": "sha512-ETW44IqCgBpVomy520DT5jf8n0zoCac+sxWnn+hMe/CzaSejb/eVw2YToiXYX+Ex/AuHHia28vWTq4goAexFbw==",
+          "requires": {}
+        }
       }
     },
     "@nuxt/vue-renderer": {
@@ -19070,6 +19363,11 @@
           "version": "4.0.1",
           "resolved": "https://registry.npmjs.org/defu/-/defu-4.0.1.tgz",
           "integrity": "sha512-lC+G0KvvWRbisQa50+iFelm3/eMmwo4IlBmfASOVlw9MZpHHyQeVsZxc5j23+TQy5ydgEoTVSrWl7ptou1kzJQ=="
+        },
+        "vue": {
+          "version": "2.6.14",
+          "resolved": "https://registry.npmjs.org/vue/-/vue-2.6.14.tgz",
+          "integrity": "sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ=="
         }
       }
     },
@@ -20040,6 +20338,90 @@
         "camelcase": "^5.0.0"
       }
     },
+    "@vue/compiler-core": {
+      "version": "3.2.26",
+      "resolved": "https://registry.npmjs.org/@vue/compiler-core/-/compiler-core-3.2.26.tgz",
+      "integrity": "sha512-N5XNBobZbaASdzY9Lga2D9Lul5vdCIOXvUMd6ThcN8zgqQhPKfCV+wfAJNNJKQkSHudnYRO2gEB+lp0iN3g2Tw==",
+      "dev": true,
+      "peer": true,
+      "requires": {
+        "@babel/parser": "^7.16.4",
+        "@vue/shared": "3.2.26",
+        "estree-walker": "^2.0.2",
+        "source-map": "^0.6.1"
+      },
+      "dependencies": {
+        "source-map": {
+          "version": "0.6.1",
+          "resolved": "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz",
+          "integrity": "sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==",
+          "dev": true,
+          "peer": true
+        }
+      }
+    },
+    "@vue/compiler-dom": {
+      "version": "3.2.26",
+      "resolved": "https://registry.npmjs.org/@vue/compiler-dom/-/compiler-dom-3.2.26.tgz",
+      "integrity": "sha512-smBfaOW6mQDxcT3p9TKT6mE22vjxjJL50GFVJiI0chXYGU/xzC05QRGrW3HHVuJrmLTLx5zBhsZ2dIATERbarg==",
+      "dev": true,
+      "peer": true,
+      "requires": {
+        "@vue/compiler-core": "3.2.26",
+        "@vue/shared": "3.2.26"
+      }
+    },
+    "@vue/compiler-sfc": {
+      "version": "3.2.26",
+      "resolved": "https://registry.npmjs.org/@vue/compiler-sfc/-/compiler-sfc-3.2.26.tgz",
+      "integrity": "sha512-ePpnfktV90UcLdsDQUh2JdiTuhV0Skv2iYXxfNMOK/F3Q+2BO0AulcVcfoksOpTJGmhhfosWfMyEaEf0UaWpIw==",
+      "dev": true,
+      "peer": true,
+      "requires": {
+        "@babel/parser": "^7.16.4",
+        "@vue/compiler-core": "3.2.26",
+        "@vue/compiler-dom": "3.2.26",
+        "@vue/compiler-ssr": "3.2.26",
+        "@vue/reactivity-transform": "3.2.26",
+        "@vue/shared": "3.2.26",
+        "estree-walker": "^2.0.2",
+        "magic-string": "^0.25.7",
+        "postcss": "^8.1.10",
+        "source-map": "^0.6.1"
+      },
+      "dependencies": {
+        "postcss": {
+          "version": "8.4.5",
+          "resolved": "https://registry.npmjs.org/postcss/-/postcss-8.4.5.tgz",
+          "integrity": "sha512-jBDboWM8qpaqwkMwItqTQTiFikhs/67OYVvblFFTM7MrZjt6yMKd6r2kgXizEbTTljacm4NldIlZnhbjr84QYg==",
+          "dev": true,
+          "peer": true,
+          "requires": {
+            "nanoid": "^3.1.30",
+            "picocolors": "^1.0.0",
+            "source-map-js": "^1.0.1"
+          }
+        },
+        "source-map": {
+          "version": "0.6.1",
+          "resolved": "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz",
+          "integrity": "sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==",
+          "dev": true,
+          "peer": true
+        }
+      }
+    },
+    "@vue/compiler-ssr": {
+      "version": "3.2.26",
+      "resolved": "https://registry.npmjs.org/@vue/compiler-ssr/-/compiler-ssr-3.2.26.tgz",
+      "integrity": "sha512-2mywLX0ODc4Zn8qBoA2PDCsLEZfpUGZcyoFRLSOjyGGK6wDy2/5kyDOWtf0S0UvtoyVq95OTSGIALjZ4k2q/ag==",
+      "dev": true,
+      "peer": true,
+      "requires": {
+        "@vue/compiler-dom": "3.2.26",
+        "@vue/shared": "3.2.26"
+      }
+    },
     "@vue/component-compiler-utils": {
       "version": "3.2.2",
       "resolved": "https://registry.npmjs.org/@vue/component-compiler-utils/-/component-compiler-utils-3.2.2.tgz",
@@ -20081,6 +20463,78 @@
           "integrity": "sha1-HBH5IY8HYImkfdUS+TxmmaaoHVI="
         }
       }
+    },
+    "@vue/devtools-api": {
+      "version": "6.0.0-beta.20.1",
+      "resolved": "https://registry.npmjs.org/@vue/devtools-api/-/devtools-api-6.0.0-beta.20.1.tgz",
+      "integrity": "sha512-R2rfiRY+kZugzWh9ZyITaovx+jpU4vgivAEAiz80kvh3yviiTU3CBuGuyWpSwGz9/C7TkSWVM/FtQRGlZ16n8Q==",
+      "dev": true,
+      "peer": true
+    },
+    "@vue/reactivity": {
+      "version": "3.2.26",
+      "resolved": "https://registry.npmjs.org/@vue/reactivity/-/reactivity-3.2.26.tgz",
+      "integrity": "sha512-h38bxCZLW6oFJVDlCcAiUKFnXI8xP8d+eO0pcDxx+7dQfSPje2AO6M9S9QO6MrxQB7fGP0DH0dYQ8ksf6hrXKQ==",
+      "dev": true,
+      "peer": true,
+      "requires": {
+        "@vue/shared": "3.2.26"
+      }
+    },
+    "@vue/reactivity-transform": {
+      "version": "3.2.26",
+      "resolved": "https://registry.npmjs.org/@vue/reactivity-transform/-/reactivity-transform-3.2.26.tgz",
+      "integrity": "sha512-XKMyuCmzNA7nvFlYhdKwD78rcnmPb7q46uoR00zkX6yZrUmcCQ5OikiwUEVbvNhL5hBJuvbSO95jB5zkUon+eQ==",
+      "dev": true,
+      "peer": true,
+      "requires": {
+        "@babel/parser": "^7.16.4",
+        "@vue/compiler-core": "3.2.26",
+        "@vue/shared": "3.2.26",
+        "estree-walker": "^2.0.2",
+        "magic-string": "^0.25.7"
+      }
+    },
+    "@vue/runtime-core": {
+      "version": "3.2.26",
+      "resolved": "https://registry.npmjs.org/@vue/runtime-core/-/runtime-core-3.2.26.tgz",
+      "integrity": "sha512-BcYi7qZ9Nn+CJDJrHQ6Zsmxei2hDW0L6AB4vPvUQGBm2fZyC0GXd/4nVbyA2ubmuhctD5RbYY8L+5GUJszv9mQ==",
+      "dev": true,
+      "peer": true,
+      "requires": {
+        "@vue/reactivity": "3.2.26",
+        "@vue/shared": "3.2.26"
+      }
+    },
+    "@vue/runtime-dom": {
+      "version": "3.2.26",
+      "resolved": "https://registry.npmjs.org/@vue/runtime-dom/-/runtime-dom-3.2.26.tgz",
+      "integrity": "sha512-dY56UIiZI+gjc4e8JQBwAifljyexfVCkIAu/WX8snh8vSOt/gMSEGwPRcl2UpYpBYeyExV8WCbgvwWRNt9cHhQ==",
+      "dev": true,
+      "peer": true,
+      "requires": {
+        "@vue/runtime-core": "3.2.26",
+        "@vue/shared": "3.2.26",
+        "csstype": "^2.6.8"
+      }
+    },
+    "@vue/server-renderer": {
+      "version": "3.2.26",
+      "resolved": "https://registry.npmjs.org/@vue/server-renderer/-/server-renderer-3.2.26.tgz",
+      "integrity": "sha512-Jp5SggDUvvUYSBIvYEhy76t4nr1vapY/FIFloWmQzn7UxqaHrrBpbxrqPcTrSgGrcaglj0VBp22BKJNre4aA1w==",
+      "dev": true,
+      "peer": true,
+      "requires": {
+        "@vue/compiler-ssr": "3.2.26",
+        "@vue/shared": "3.2.26"
+      }
+    },
+    "@vue/shared": {
+      "version": "3.2.26",
+      "resolved": "https://registry.npmjs.org/@vue/shared/-/shared-3.2.26.tgz",
+      "integrity": "sha512-vPV6Cq+NIWbH5pZu+V+2QHE9y1qfuTq49uNWw4f7FDEeZaDU2H2cx5jcUZOAKW7qTrUS4k6qZPbMy1x4N96nbA==",
+      "dev": true,
+      "peer": true
     },
     "@vue/test-utils": {
       "version": "1.2.2",
@@ -22502,6 +22956,13 @@
         }
       }
     },
+    "csstype": {
+      "version": "2.6.19",
+      "resolved": "https://registry.npmjs.org/csstype/-/csstype-2.6.19.tgz",
+      "integrity": "sha512-ZVxXaNy28/k3kJg0Fou5MiYpp88j7H9hLZp8PDC3jV0WFjfH5E9xHb56L0W59cPbKbcHXeP4qyT8PrHp8t6LcQ==",
+      "dev": true,
+      "peer": true
+    },
     "cuint": {
       "version": "0.2.2",
       "resolved": "https://registry.npmjs.org/cuint/-/cuint-0.2.2.tgz",
@@ -23787,6 +24248,13 @@
       "version": "4.3.0",
       "resolved": "https://registry.npmjs.org/estraverse/-/estraverse-4.3.0.tgz",
       "integrity": "sha512-39nnKffWz8xN1BU/2c79n9nB9HDzo0niYUqx6xyqUnyoAnQyyWpOTdZEeiCch8BBu515t4wp9ZmgVfVhn9EBpw=="
+    },
+    "estree-walker": {
+      "version": "2.0.2",
+      "resolved": "https://registry.npmjs.org/estree-walker/-/estree-walker-2.0.2.tgz",
+      "integrity": "sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==",
+      "dev": true,
+      "peer": true
     },
     "esutils": {
       "version": "2.0.3",
@@ -27502,6 +27970,16 @@
         "yallist": "^3.0.2"
       }
     },
+    "magic-string": {
+      "version": "0.25.7",
+      "resolved": "https://registry.npmjs.org/magic-string/-/magic-string-0.25.7.tgz",
+      "integrity": "sha512-4CrMT5DOHTDk4HYDlzmwu4FVCcIYI8gauveasrdCu2IKIFOJ3f0v/8MDGJCDL9oD2ppz/Av1b0Nj345H9M+XIA==",
+      "dev": true,
+      "peer": true,
+      "requires": {
+        "sourcemap-codec": "^1.4.4"
+      }
+    },
     "make-dir": {
       "version": "3.1.0",
       "resolved": "https://registry.npmjs.org/make-dir/-/make-dir-3.1.0.tgz",
@@ -27846,9 +28324,9 @@
       "optional": true
     },
     "nanoid": {
-      "version": "3.1.23",
-      "resolved": "https://registry.npmjs.org/nanoid/-/nanoid-3.1.23.tgz",
-      "integrity": "sha512-FiB0kzdP0FFVGDKlRLEQ1BgDzU87dy5NnzjeW9YZNt+/c3+q82EQDUwniSAUxp/F0gFNI1ZhKU1FqYsMuqZVnw=="
+      "version": "3.1.30",
+      "resolved": "https://registry.npmjs.org/nanoid/-/nanoid-3.1.30.tgz",
+      "integrity": "sha512-zJpuPDwOv8D2zq2WRoMe1HsfZthVewpel9CAvTfc/2mBD1uUT/agc5f7GHGWXlYkFvi1mVxe4IjvP2HNrop7nQ=="
     },
     "nanomatch": {
       "version": "1.2.13",
@@ -28567,6 +29045,13 @@
         "safe-buffer": "^5.0.1",
         "sha.js": "^2.4.8"
       }
+    },
+    "picocolors": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/picocolors/-/picocolors-1.0.0.tgz",
+      "integrity": "sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==",
+      "dev": true,
+      "peer": true
     },
     "picomatch": {
       "version": "2.3.0",
@@ -30944,6 +31429,13 @@
       "resolved": "https://registry.npmjs.org/source-map/-/source-map-0.5.7.tgz",
       "integrity": "sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w="
     },
+    "source-map-js": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/source-map-js/-/source-map-js-1.0.1.tgz",
+      "integrity": "sha512-4+TN2b3tqOCd/kaGRJ/sTYA0tR0mdXx26ipdolxcwtJVqEnqNYvlCAt1q3ypy4QMlYus+Zh34RNtYLoq2oQ4IA==",
+      "dev": true,
+      "peer": true
+    },
     "source-map-resolve": {
       "version": "0.5.3",
       "resolved": "https://registry.npmjs.org/source-map-resolve/-/source-map-resolve-0.5.3.tgz",
@@ -30976,6 +31468,13 @@
       "version": "0.4.1",
       "resolved": "https://registry.npmjs.org/source-map-url/-/source-map-url-0.4.1.tgz",
       "integrity": "sha512-cPiFOTLUKvJFIg4SKVScy4ilPPW6rFgMgfuZJPNoDuMs3nC1HbMUycBoJw77xFIp6z1UJQJOfx6C9GMH80DiTw=="
+    },
+    "sourcemap-codec": {
+      "version": "1.4.8",
+      "resolved": "https://registry.npmjs.org/sourcemap-codec/-/sourcemap-codec-1.4.8.tgz",
+      "integrity": "sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==",
+      "dev": true,
+      "peer": true
     },
     "spdx-correct": {
       "version": "3.1.1",
@@ -32359,9 +32858,18 @@
       "integrity": "sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ=="
     },
     "vue": {
-      "version": "2.6.14",
-      "resolved": "https://registry.npmjs.org/vue/-/vue-2.6.14.tgz",
-      "integrity": "sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ=="
+      "version": "3.2.26",
+      "resolved": "https://registry.npmjs.org/vue/-/vue-3.2.26.tgz",
+      "integrity": "sha512-KD4lULmskL5cCsEkfhERVRIOEDrfEL9CwAsLYpzptOGjaGFNWo3BQ9g8MAb7RaIO71rmVOziZ/uEN/rHwcUIhg==",
+      "dev": true,
+      "peer": true,
+      "requires": {
+        "@vue/compiler-dom": "3.2.26",
+        "@vue/compiler-sfc": "3.2.26",
+        "@vue/runtime-dom": "3.2.26",
+        "@vue/server-renderer": "3.2.26",
+        "@vue/shared": "3.2.26"
+      }
     },
     "vue-client-only": {
       "version": "2.1.0",
@@ -32564,9 +33072,21 @@
       "integrity": "sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw=="
     },
     "vuex": {
-      "version": "3.6.2",
-      "resolved": "https://registry.npmjs.org/vuex/-/vuex-3.6.2.tgz",
-      "integrity": "sha512-ETW44IqCgBpVomy520DT5jf8n0zoCac+sxWnn+hMe/CzaSejb/eVw2YToiXYX+Ex/AuHHia28vWTq4goAexFbw=="
+      "version": "4.0.2",
+      "resolved": "https://registry.npmjs.org/vuex/-/vuex-4.0.2.tgz",
+      "integrity": "sha512-M6r8uxELjZIK8kTKDGgZTYX/ahzblnzC4isU1tpmEuOIIKmV+TRdc+H4s8ds2NuZ7wpUTdGRzJRtoj+lI+pc0Q==",
+      "dev": true,
+      "peer": true,
+      "requires": {
+        "@vue/devtools-api": "^6.0.0-beta.11"
+      }
+    },
+    "vuex-module-decorators": {
+      "version": "2.0.0",
+      "resolved": "https://registry.npmjs.org/vuex-module-decorators/-/vuex-module-decorators-2.0.0.tgz",
+      "integrity": "sha512-awfjlJR9PlX2tDNzRk5fUnksO4TC5Z93Q3ZycvROCiLId7MZ1GdY4sHpEvPqm02UZ8jF+BkuyN5ezghOAk3zeQ==",
+      "dev": true,
+      "requires": {}
     },
     "w3c-hr-time": {
       "version": "1.0.2",
