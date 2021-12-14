@@ -1,16 +1,12 @@
-import { Module, VuexModule, Mutation } from 'vuex-module-decorators';
+import { GetterTree } from 'vuex'
+import Project from '~/models/Project'
 
-import Project from '~/models/Project';
-
-@Module({
-  name: 'projects',
-  stateFactory: true,
-  namespaced: true
+export const state = () => ({
+  list: [] as Project[]
 })
-class ProjectsModule extends VuexModule {
-  private projects: Project[] = [];
 
-  get all() {
-    return this.projects
-  }
+export type ProjectsState = ReturnType<typeof state>
+
+export const getters: GetterTree<ProjectsState, ProjectsState> = {
+  all: state => state.list
 }
