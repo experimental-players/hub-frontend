@@ -18,6 +18,7 @@ module.exports = {
     'constructor-super': 'off',
     'import/named': 'off',
     'arrow-parens': 'off',
-    'operator-linebreak': 'off'
+    'operator-linebreak': 'off',
+    'prefer-regex-literals': 'warn'
   }
 }
