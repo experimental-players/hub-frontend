@@ -16,9 +16,9 @@
       <div class="hero-body">
         <div class="container">
           <BubbleSection
-            v-for="(section, n) in everySection"
+            v-for="(category, n) in everyCategory"
             :key="n"
-            v-bind="section"
+            v-bind="category"
           />
         </div>
       </div>
@@ -31,11 +31,12 @@ import { mapGetters } from 'vuex'
 
 export default {
   computed: {
-    ...mapGetters('sections', ['everySection']),
+    ...mapGetters('categories', ['everyCategory']),
     ...mapGetters('projects', ['everyProject'])
   },
-  mounted () {
-    this.$store.dispatch('projects/pull');
+  async mounted () {
+    await this.$store.dispatch('categories/pull');
+    await this.$store.dispatch('projects/pull');
   }
 }
 </script>

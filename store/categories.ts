@@ -1,26 +1,26 @@
 import { GetterTree, MutationTree, ActionTree } from 'vuex'
-import Project from '@/models/Project'
+import Category from '@/models/Category'
 
 export const state = () => ({
-  list: [] as Project[]
+  list: [] as Category[]
 })
 
 export type ProjectsState = ReturnType<typeof state>
 
 export const getters: GetterTree<ProjectsState, ProjectsState> = {
-  everyProject: state => state.list
+  everyCategory: state => state.list
 }
 
 export const mutations: MutationTree<ProjectsState> = {
-  SAVE_PROJECTS (state, newProjects: any) {
-    state.list = (newProjects.content as any[]).map(project => new Project().fromJSON(project));
+  SAVE_CATEGORIES (state, newCategory: any) {
+    state.list = (newCategory.content as any[]).map(category => new Category().fromJSON(category));
   }
 }
 
 // NOTE Only use mutations here
 export const actions: ActionTree<ProjectsState, ProjectsState> = {
   async pull (context) {
-    const projects = await this.$axios.$get('project/findAll');
-    context.commit('SAVE_PROJECTS', projects);
+    const categories = await this.$axios.$get('category/findAll');
+    context.commit('SAVE_CATEGORIES', categories);
   }
 }
