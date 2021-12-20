@@ -17,7 +17,8 @@
 
       <div class="column is-one-fifth">
         <div v-if="link">
-          <nuxt-link :to="link.href" class="button is-light is-medium has-text-bold is-rounded" v-text="link.title" />
+          <!-- <component :is="c" :href="link.href" :to="link.href" class="button is-light is-medium has-text-bold is-rounded" v-text="link.title"></component> -->
+          <Link :to="link" class="button is-light is-medium has-text-bold is-rounded" />
         </div>
       </div>
     </div>
