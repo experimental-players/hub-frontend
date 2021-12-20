@@ -33,6 +33,9 @@ export default {
   computed: {
     ...mapGetters('sections', ['everySection']),
     ...mapGetters('projects', ['everyProject'])
+  },
+  mounted () {
+    this.$store.dispatch('projects/pull');
   }
 }
 </script>
