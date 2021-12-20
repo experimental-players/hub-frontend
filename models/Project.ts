@@ -8,7 +8,7 @@ export default class Project extends BuildableResource {
   public code: string = '';
 
   @Properties.Alias('fullname')
-  public name: string = '';
+  public title: string = '';
 
   public description: string = '';
 }
