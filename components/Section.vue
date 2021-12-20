@@ -17,7 +17,6 @@
 
       <div class="column is-one-fifth">
         <div v-if="link">
-          <!-- <component :is="c" :href="link.href" :to="link.href" class="button is-light is-medium has-text-bold is-rounded" v-text="link.title"></component> -->
           <Link :to="link" class="button is-light is-medium has-text-bold is-rounded" />
         </div>
       </div>
