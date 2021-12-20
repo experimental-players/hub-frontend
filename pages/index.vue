@@ -12,13 +12,37 @@
       </div>
     </div>
 
-    <div class="hero is-dark is-bold">
+    <div class="hero is-primary is-bold">
       <div class="hero-body">
         <div class="container">
           <BubbleSection
             v-for="(category, n) in everyCategory"
             :key="n"
             v-bind="category"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="hero is-light is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <BubbleSection
+            v-for="(bot, n) in everyBot"
+            :key="n"
+            v-bind="bot"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="hero is-dark is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <BubbleSection
+            v-for="(project, n) in everyProject"
+            :key="n"
+            v-bind="project"
           />
         </div>
       </div>
@@ -32,11 +56,13 @@ import { mapGetters } from 'vuex'
 export default {
   computed: {
     ...mapGetters('categories', ['everyCategory']),
-    ...mapGetters('projects', ['everyProject'])
+    ...mapGetters('projects', ['everyProject']),
+    ...mapGetters('bots', ['everyBot'])
   },
   async mounted () {
     await this.$store.dispatch('categories/pull');
     await this.$store.dispatch('projects/pull');
+    await this.$store.dispatch('bots/pull');
   }
 }
 </script>
