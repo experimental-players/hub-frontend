@@ -59,10 +59,15 @@ export default {
     ...mapGetters('projects', ['everyProject']),
     ...mapGetters('bots', ['everyBot'])
   },
-  async mounted () {
-    await this.$store.dispatch('categories/pull');
-    await this.$store.dispatch('projects/pull');
-    await this.$store.dispatch('bots/pull');
+  mounted () {
+    this.$nextTick(async () => {
+      this.$app.$loading.start();
+      await this.$store.dispatch('categories/pull');
+      await this.$store.dispatch('projects/pull');
+      await this.$store.dispatch('bots/pull');
+
+      this.$app.$loading.finish();
+    })
   }
 }
 </script>
