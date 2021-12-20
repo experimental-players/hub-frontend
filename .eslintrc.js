@@ -14,6 +14,7 @@ module.exports = {
   rules: {
     'vue/require-default-prop': 'off',
     semi: 'off',
-    'no-useless-constructor': 'off'
+    'no-useless-constructor': 'off',
+    'import/named': 'off'
   }
 }
