@@ -17,6 +17,7 @@ module.exports = {
     'no-useless-constructor': 'off',
     'constructor-super': 'off',
     'import/named': 'off',
-    'arrow-parens': 'off'
+    'arrow-parens': 'off',
+    'operator-linebreak': 'off'
   }
 }
