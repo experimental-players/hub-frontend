@@ -13,7 +13,9 @@ export const getters: GetterTree<ProjectsState, ProjectsState> = {
 
 export const mutations: MutationTree<ProjectsState> = {
   SAVE_CATEGORIES (state, newCategory: any) {
-    state.list = (newCategory.content as any[]).map(category => new Category().fromJSON(category));
+    state.list = (newCategory.content as any[]).map(category => {
+      return { ...new Category().fromJSON(category) } as Category;
+    });
   }
 }
 
