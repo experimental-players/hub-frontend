@@ -16,6 +16,7 @@ module.exports = {
     semi: 'off',
     'no-useless-constructor': 'off',
     'constructor-super': 'off',
-    'import/named': 'off'
+    'import/named': 'off',
+    'arrow-parens': 'off'
   }
 }
