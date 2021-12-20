@@ -1,5 +1,6 @@
 import { GetterTree, MutationTree, ActionTree } from 'vuex'
 import Project from '@/models/Project'
+import 'tapi.js/dist/extensions'
 
 export const state = () => ({
   list: [] as Project[]
@@ -12,16 +13,15 @@ export const getters: GetterTree<ProjectsState, ProjectsState> = {
 }
 
 export const mutations: MutationTree<ProjectsState> = {
-  SAVE_PROJECTS(state, newProjects: any[]) {
-    state.list = newProjects.map(project => new Project().fromJSON(project));
+  SAVE_PROJECTS (state, newProjects: any) {
+    state.list = (newProjects.content as any[]).map(project => new Project().fromJSON(project));
   }
 }
 
-//NOTE Only use mutations here
+// NOTE Only use mutations here
 export const actions: ActionTree<ProjectsState, ProjectsState> = {
-  async pull(context) {
-    let projects = await this.$axios.$get("projects/findAll");
-
-    context.commit('SAVE_PROJECTS', projects.list);
+  async pull (context) {
+    const projects = await this.$axios.$get('project/findAll');
+    context.commit('SAVE_PROJECTS', projects);
   }
 }
