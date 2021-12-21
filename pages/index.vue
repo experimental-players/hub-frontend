@@ -12,13 +12,37 @@
       </div>
     </div>
 
+    <div class="hero is-primary is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <Section
+            v-for="(category, n) in everyCategory"
+            :key="n"
+            v-bind="category"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="hero is-light is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <Section
+            v-for="(bot, n) in everyBot"
+            :key="n"
+            v-bind="bot"
+          />
+        </div>
+      </div>
+    </div>
+
     <div class="hero is-dark is-bold">
       <div class="hero-body">
         <div class="container">
-          <BubbleSection
-            v-for="(section, n) in everySection"
+          <Section
+            v-for="(project, n) in everyProject"
             :key="n"
-            v-bind="section"
+            v-bind="project"
           />
         </div>
       </div>
@@ -31,7 +55,19 @@ import { mapGetters } from 'vuex'
 
 export default {
   computed: {
-    ...mapGetters('sections', ['everySection'])
+    ...mapGetters('categories', ['everyCategory']),
+    ...mapGetters('projects', ['everyProject']),
+    ...mapGetters('bots', ['everyBot'])
+  },
+  mounted () {
+    this.$nextTick(async () => {
+      this.$app.$loading.start();
+      await this.$store.dispatch('categories/pull');
+      await this.$store.dispatch('projects/pull');
+      await this.$store.dispatch('bots/pull');
+
+      this.$app.$loading.finish();
+    })
   }
 }
 </script>

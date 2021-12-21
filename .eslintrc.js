@@ -13,6 +13,12 @@ module.exports = {
   // add your custom rules here
   rules: {
     'vue/require-default-prop': 'off',
-    semi: 'off'
+    semi: 'off',
+    'no-useless-constructor': 'off',
+    'constructor-super': 'off',
+    'import/named': 'off',
+    'arrow-parens': 'off',
+    'operator-linebreak': 'off',
+    'prefer-regex-literals': 'warn'
   }
 }

@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Section from '@/components/BubbleSection'
+import Section from '@/components/Section'
 
 export default {
   extends: Section

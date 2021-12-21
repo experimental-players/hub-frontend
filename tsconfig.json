@@ -14,11 +14,9 @@
     "strict": true,
     "noEmit": true,
     "experimentalDecorators": true,
+    "noImplicitAny": false,
     "baseUrl": ".",
     "paths": {
-      "~/*": [
-        "./*"
-      ],
       "@/*": [
         "./*"
       ]

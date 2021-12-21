@@ -1,9 +1,12 @@
 <template>
   <div v-if="loading" class="loading-page hero is-fullheight is-dark is-bold">
     <div class="hero-body container">
-      <p class="banner-title title is-1">
-        Loading...
-      </p>
+      <div>
+        <img src="https://static.experimentalplayers.org/loading.gif" />
+        <p class="has-text-centered">
+          Loading...
+        </p>
+      </div>
     </div>
   </div>
 </template>
