@@ -12,6 +12,10 @@ export default class BaseResource extends BuildableResource {
 
     public description: string = '';
 
+    public icon: string = '';
+
+    public image: string = '';
+
     @Properties.Transform(fixColorString, (c: string) => c.replace('#', ''))
     public color: string = '';
 
