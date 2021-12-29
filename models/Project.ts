@@ -1,14 +1,12 @@
-import { BuildableResource, Properties } from 'tapi.js';
+import { Properties } from 'tapi.js';
+import BaseResource from '@/models/base/BaseResource';
 
-@Properties.Resource
-export default class Project extends BuildableResource {
-  public id: string = '';
+export default class Project extends BaseResource {
+  constructor() {
+    super();
 
-  @Properties.Alias('codename')
-  public code: string = '';
-
-  @Properties.Alias('fullname')
-  public title: string = '';
-
-  public description: string = '';
+    this.build
+        .alias('fullname', 'title')
+        .alias('codename', 'code')
+  }
 }
