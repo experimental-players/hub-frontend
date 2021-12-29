@@ -33,7 +33,6 @@
 import Color from 'chroma-js'
 import dynamicBanner from '@/mixins/dynamicBanner'
 import BaseResource from '@/models/base/BaseResource'
-import Link from '@/models/Link'
 
 export default {
   mixins: [dynamicBanner],
@@ -43,15 +42,13 @@ export default {
   },
   data() {
     return {
-      baseLinks: [
-        new Link("Test", "#")
-      ]
+      internalLinks: []
     }
   },
   computed: {
     links () {
       let external = this.data.link ? [this.data.link] : []
-      return [...external, ...this.baseLinks]
+      return [...external, ...this.internalLinks]
     },
     colorEntity () {
       return Color(this.data.color ?? 'white')
@@ -67,6 +64,11 @@ export default {
         boxShadow: this.glow ? `0 10px 40px ${this.colorEntity.alpha(0.7)}` : null
       }
     }
+  },
+  mounted() {
+    this.internalLinks = [
+      this.data.pageLink
+    ]
   }
 }
 </script>

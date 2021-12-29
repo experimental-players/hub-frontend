@@ -19,6 +19,18 @@ export default class BaseResource extends BuildableResource {
     @Properties.Transform(fixColorString, (c: string) => c.replace('#', ''))
     public color: string = '';
 
-    @Properties.Transform(url => new Link('Project URL', url), (link: Link) => link.href)
+    @Properties.Transform(url => new Link('Project URL', url), (link?: Link) => link ? link.href : '')
     public link?: Link = undefined;
+
+    @Properties.Ignore
+    public pageLink: Link;
+
+    constructor() {
+        super();
+        this.pageLink = this.getPageLink(this.id);
+    }
+
+    protected getPageLink (identifier: string): Link {
+        return new Link('View', `/resources/${identifier}`);
+    }
 }
