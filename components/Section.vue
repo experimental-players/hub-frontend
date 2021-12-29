@@ -15,9 +15,14 @@
         </div>
       </div>
 
-      <div class="column is-one-fifth">
-        <div v-if="data.link">
-          <Link :to="data.link" class="button is-light is-medium has-text-bold is-rounded" />
+      <div class="column is-flex is-justify-content-flex-end">
+        <div v-if="links.length > 0">
+          <Link
+            v-for="link in links"
+            :key="link.href"
+            :to="link"
+            class="button is-light is-medium has-text-bold is-rounded mx-2"
+          />
         </div>
       </div>
     </div>
@@ -28,6 +33,7 @@
 import Color from 'chroma-js'
 import dynamicBanner from '@/mixins/dynamicBanner'
 import BaseResource from '@/models/base/BaseResource'
+import Link from '@/models/Link'
 
 export default {
   mixins: [dynamicBanner],
@@ -35,7 +41,18 @@ export default {
     data: BaseResource,
     glow: Boolean
   },
+  data() {
+    return {
+      baseLinks: [
+        new Link("Test", "#")
+      ]
+    }
+  },
   computed: {
+    links () {
+      let external = this.data.link ? [this.data.link] : []
+      return [...external, ...this.baseLinks]
+    },
     colorEntity () {
       return Color(this.data.color ?? 'white')
     },
