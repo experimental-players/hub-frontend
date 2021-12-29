@@ -8,7 +8,8 @@ export const state = () => ({
 export type ProjectsState = ReturnType<typeof state>
 
 export const getters: GetterTree<ProjectsState, ProjectsState> = {
-  everyCategory: state => state.list
+  everyCategory: state => state.list,
+  singleCategory: (state, id: string) => state.list.find(c => c.id === id || true)
 }
 
 export const mutations: MutationTree<ProjectsState> = {
