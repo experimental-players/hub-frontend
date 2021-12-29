@@ -12,6 +12,6 @@ export default class Project extends BaseResource {
   }
 
   protected override getPageLink (identifier: string): Link {
-    return new Link('View', `/section/${identifier}`);
+    return new Link('View', `/projects/${identifier}`);
   }
 }

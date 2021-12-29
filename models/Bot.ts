@@ -11,6 +11,6 @@ export default class Bot extends BaseResource {
   }
 
   protected override getPageLink (identifier: string): Link {
-    return new Link('View', `/section/${identifier}`);
+    return new Link('View', `/bots/${identifier}`);
   }
 }
