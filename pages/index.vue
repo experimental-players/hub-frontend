@@ -18,7 +18,7 @@
           <Section
             v-for="(category, n) in everyCategory"
             :key="n"
-            v-bind="category"
+            :data="category"
           />
         </div>
       </div>
@@ -30,7 +30,7 @@
           <Section
             v-for="(bot, n) in everyBot"
             :key="n"
-            v-bind="bot"
+            :data="bot"
           />
         </div>
       </div>
@@ -42,7 +42,7 @@
           <Section
             v-for="(project, n) in everyProject"
             :key="n"
-            v-bind="project"
+            :data="project"
           />
         </div>
       </div>

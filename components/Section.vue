@@ -1,7 +1,7 @@
 <template>
   <div class="main box is-block section my-6 banner" :style="[bannerStyle, boxStyle]">
     <div class="columns is-vcentered">
-      <div v-if="icon" class="column is-one-fifth">
+      <div v-if="data.icon" class="column is-one-fifth">
         <figure class="box is-inline-block has-shadow">
           <p class="image is-64x64">
             <img :src="icon">
@@ -11,13 +11,13 @@
 
       <div class="column">
         <div class="content">
-          <p class="title is-1" :style="bannerForegroundStyle" v-text="title" />
+          <p class="title is-1" :style="bannerForegroundStyle" v-text="data.title" />
         </div>
       </div>
 
       <div class="column is-one-fifth">
-        <div v-if="link">
-          <Link :to="link" class="button is-light is-medium has-text-bold is-rounded" />
+        <div v-if="data.link">
+          <Link :to="data.link" class="button is-light is-medium has-text-bold is-rounded" />
         </div>
       </div>
     </div>
@@ -27,30 +27,23 @@
 <script>
 import Color from 'chroma-js'
 import dynamicBanner from '@/mixins/dynamicBanner'
-import Link from '@/models/Link'
+import BaseResource from '@/models/base/BaseResource'
 
 export default {
   mixins: [dynamicBanner],
   props: {
-    icon: String,
-    image: String,
-    color: String,
-    title: {
-      type: String,
-      required: true
-    },
-    link: [Link, Object],
+    data: BaseResource,
     glow: Boolean
   },
   computed: {
     colorEntity () {
-      return Color(this.color ?? 'white')
+      return Color(this.data.color ?? 'white')
     },
     bannerColor () {
       return this.colorEntity.hex()
     },
     bannerImage () {
-      return this.image
+      return this.data.image
     },
     boxStyle () {
       return {
