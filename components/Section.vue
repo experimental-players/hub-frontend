@@ -17,12 +17,13 @@
 
       <div class="column is-flex is-justify-content-flex-end">
         <div v-if="links.length > 0">
-          <Link
-            v-for="link in links"
-            :key="link.href"
-            :to="link"
-            class="button is-light is-medium has-text-bold is-rounded mx-2"
-          />
+          <span v-for="(link, n) in links" :key="n">
+            <Link
+              v-if="link"
+              :to="link"
+              class="button is-light is-medium has-text-bold is-rounded mx-2"
+            />
+          </span>
         </div>
       </div>
     </div>
@@ -38,19 +39,19 @@ export default {
   mixins: [dynamicBanner],
   props: {
     data: {
-      type: BaseResource,
+      type: [BaseResource, Object],
       required: true
     },
     glow: Boolean
   },
-  data() {
+  data () {
     return {
       internalLinks: []
     }
   },
   computed: {
     links () {
-      let external = this.data.link ? [this.data.link] : []
+      const external = this.data.link ? [this.data.link] : []
       return [...external, ...this.internalLinks]
     },
     colorEntity () {
@@ -68,7 +69,7 @@ export default {
       }
     }
   },
-  mounted() {
+  mounted () {
     this.internalLinks = [
       this.data.pageLink
     ]
