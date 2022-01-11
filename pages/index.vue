@@ -27,11 +27,11 @@
     <div class="hero is-light is-bold">
       <div class="hero-body">
         <div class="container">
-          <Section
+          <!-- <Section
             v-for="(bot, n) in everyBot"
             :key="n"
             :data="bot"
-          />
+          /> -->
         </div>
       </div>
     </div>
@@ -39,11 +39,11 @@
     <div class="hero is-dark is-bold">
       <div class="hero-body">
         <div class="container">
-          <Section
+          <!-- <Section
             v-for="(project, n) in everyProject"
             :key="n"
             :data="project"
-          />
+          /> -->
         </div>
       </div>
     </div>

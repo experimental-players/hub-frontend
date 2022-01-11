@@ -10,7 +10,7 @@ export default class Bot extends BaseResource {
         .alias('projectUrl', 'link')
   }
 
-  protected override getPageLink (identifier: string): Link {
-    return new Link('View', `/bots/${identifier}`);
+  public override get pageLink (): Link {
+    return new Link('View', `/bots/${this.id}`);
   }
 }

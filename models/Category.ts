@@ -10,7 +10,7 @@ export default class Category extends BaseResource {
         .alias('codename', 'code')
   }
   
-  protected override getPageLink (identifier: string): Link {
-    return new Link('View', `/categories/${identifier}`);
+  public override get pageLink (): Link {
+    return new Link('View', `/categories/${this.id}`);
   }
 }

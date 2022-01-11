@@ -11,7 +11,7 @@ export default class Project extends BaseResource {
         .alias('codename', 'code')
   }
 
-  protected override getPageLink (identifier: string): Link {
-    return new Link('View', `/projects/${identifier}`);
+  public override get pageLink (): Link {
+    return new Link('View', `/projects/${this.id}`);
   }
 }

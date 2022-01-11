@@ -37,7 +37,10 @@ import BaseResource from '@/models/base/BaseResource'
 export default {
   mixins: [dynamicBanner],
   props: {
-    data: BaseResource,
+    data: {
+      type: BaseResource,
+      required: true
+    },
     glow: Boolean
   },
   data() {
