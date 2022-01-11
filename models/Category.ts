@@ -1,15 +1,15 @@
-import BaseResource from '@/models/base/BaseResource';
 import Link from './Link';
+import BaseResource from '@/models/base/BaseResource';
 
 export default class Category extends BaseResource {
-  constructor() {
+  constructor () {
     super();
 
     this.build
-        .alias('fullname', 'title')
-        .alias('codename', 'code')
+      .alias('fullname', 'title')
+      .alias('codename', 'code')
   }
-  
+
   public override get pageLink (): Link {
     return new Link('View', `/categories/${this.id}`);
   }

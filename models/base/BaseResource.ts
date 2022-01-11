@@ -24,6 +24,6 @@ export default class BaseResource extends BuildableResource {
 
     @Properties.Ignore
     public get pageLink (): Link {
-        return new Link('View', `/resources/${this.id}`);
+      return new Link('View', `/resources/${this.id}`);
     }
 }
