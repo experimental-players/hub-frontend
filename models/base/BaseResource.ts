@@ -23,7 +23,15 @@ export default class BaseResource extends BuildableResource {
     public link?: Link = undefined;
 
     @Properties.Ignore
-    public get pageLink (): Link {
+    readonly pageLink?: Link = undefined;
+
+    public constructor () {
+      super();
+
+      this.pageLink = this.setPageLink();
+    }
+
+    protected setPageLink (): Link|undefined {
       return new Link('View', `/resources/${this.id}`);
     }
 }

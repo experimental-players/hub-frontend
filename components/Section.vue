@@ -71,11 +71,7 @@ export default class extends Vue {
   }
 
   mounted () {
-    this.internalLinks = [
-      this.data.pageLink
-    ]
-
-    console.log(typeof (this.data as any))
+    if (this.data.pageLink) this.internalLinks.push(this.data.pageLink)
   }
 }
 </script>

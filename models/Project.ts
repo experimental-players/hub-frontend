@@ -1,4 +1,3 @@
-import { Properties } from 'tapi.js';
 import Link from './Link';
 import BaseResource from '@/models/base/BaseResource';
 
@@ -11,7 +10,7 @@ export default class Project extends BaseResource {
       .alias('codename', 'code')
   }
 
-  public override get pageLink (): Link {
+  protected override setPageLink () {
     return new Link('View', `/projects/${this.id}`);
   }
 }
