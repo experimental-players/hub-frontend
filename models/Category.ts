@@ -1,4 +1,4 @@
-import Link from './Link';
+import Link from '@/models/Link';
 import BaseResource from '@/models/base/BaseResource';
 
 export default class Category extends BaseResource {
