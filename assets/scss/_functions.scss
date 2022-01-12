@@ -1,3 +1,7 @@
 @function backgroundToForegroundColor($background-color) {
   @return invert(grayscale($background-color))
 }
+
+@function randomColor() {
+  @return rgb(random(255), random(255), random(255))
+}

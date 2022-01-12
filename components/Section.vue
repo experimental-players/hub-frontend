@@ -1,5 +1,5 @@
 <template>
-  <div class="main box is-block section my-6 banner" :style="[bannerStyle, boxStyle]">
+  <div class="main box is-block section my-6 banner" :class="{'gradient-border': withGradientBorder}" :style="[bannerStyle, boxStyle]">
     <div class="columns is-vcentered">
       <div v-if="data.icon" class="column is-one-fifth">
         <figure class="box is-inline-block has-shadow">
@@ -70,6 +70,10 @@ export default class extends Vue {
     }
   }
 
+  get withGradientBorder () {
+    return this.colorEntity.luminance() === 0;
+  }
+
   mounted () {
     this.internalLinks = [
       ...this.data.pageLinks
@@ -79,16 +83,11 @@ export default class extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.main,
-.box {
-  border-radius: 1em;
-}
-
-figure.box {
-  background-color: white;
-}
-
-.main {
-  background-position: right center;
+.gradient-border {
+  border-style: solid;
+  border-width: 7px;
+  border-radius: 0;
+  background-clip: padding;
+  border-image: linear-gradient( 69.7deg,  rgba(244,37,243,1) 1.4%, rgba(244,87,1,1) 36.2%, rgba(255,204,37,1) 72.2%, rgba(20,196,6,1) 113% ) 1;
 }
 </style>
