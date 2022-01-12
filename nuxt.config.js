@@ -6,8 +6,6 @@ export default {
 
   buildDir: 'bundle',
 
-  globalName: 'app',
-
   env: {
     api: {
       url: process.env.API_URL || '0.0.0.0:8080'
