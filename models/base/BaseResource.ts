@@ -3,7 +3,7 @@ import Link from '@/models/Link';
 import { fixColorString } from '@/helpers/colors';
 
 @Properties.Resource
-export default class BaseResource extends BuildableResource {
+export default abstract class BaseResource extends BuildableResource {
     public id: string = '';
 
     public title: string = '';
@@ -31,7 +31,5 @@ export default class BaseResource extends BuildableResource {
       this.pageLink = this.setPageLink();
     }
 
-    protected setPageLink (): Link|undefined {
-      return new Link('View', `/resources/${this.id}`);
-    }
+    protected abstract setPageLink (): Link|undefined;
 }
