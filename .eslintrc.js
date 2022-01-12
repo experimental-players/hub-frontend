@@ -19,6 +19,7 @@ module.exports = {
     'import/named': 'off',
     'arrow-parens': 'off',
     'operator-linebreak': 'off',
-    'prefer-regex-literals': 'warn'
+    'prefer-regex-literals': 'warn',
+    curly: 'off'
   }
 }
