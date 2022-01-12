@@ -31,7 +31,7 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop } from 'vue-property-decorator'
+import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import Color from 'chroma-js'
 import dynamicBanner from '@/mixins/dynamicBanner'
 import BaseResource from '@/models/base/BaseResource'
@@ -39,7 +39,7 @@ import Link from '@/models/Link'
 
 @Component({ mixins: [dynamicBanner] })
 export default class extends Vue {
-  @Prop({ type: BaseResource, required: true })
+  @Prop({ type: Object, required: true })
   readonly data!: BaseResource;
 
   @Prop({ type: Boolean, default: false })
@@ -74,6 +74,8 @@ export default class extends Vue {
     this.internalLinks = [
       this.data.pageLink
     ]
+
+    console.log(typeof (this.data as any))
   }
 }
 </script>
