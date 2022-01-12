@@ -10,7 +10,10 @@ export default class Category extends BaseResource {
       .alias('codename', 'code')
   }
 
-  protected override setPageLink () {
-    return new Link('View', `/categories/${this.id}`);
+  protected override generateInternalLinks (): Link[] {
+    console.log(this);
+    return [
+      new Link('Explore', '/categories/' + this.id)
+    ]
   }
 }

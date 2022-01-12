@@ -10,7 +10,9 @@ export default class Project extends BaseResource {
       .alias('codename', 'code')
   }
 
-  protected override setPageLink () {
-    return new Link('View', `/projects/${this.id}`);
+  protected override generateInternalLinks (): Link[] {
+    return [
+      new Link('Docs', '#')
+    ]
   }
 }

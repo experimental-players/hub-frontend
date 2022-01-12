@@ -23,13 +23,29 @@ export default abstract class BaseResource extends BuildableResource {
     public link?: Link = undefined;
 
     @Properties.Ignore
-    readonly pageLink?: Link = undefined;
+    public pageLinks: Link[] = [];
 
-    public constructor () {
-      super();
+    public override fromJSON (source: any, strict?: boolean): this {
+      const instance = super.fromJSON(source, strict);
 
-      this.pageLink = this.setPageLink();
+      // NOTE This is not the greatest implementation,
+      // at initialization there will be at list 2 duplicates
+      // duplicates of the object in memory.
+      this.id = instance.id;
+      this.title = instance.title;
+      this.code = instance.code;
+      this.description = instance.description;
+      this.icon = instance.icon;
+      this.image = instance.image;
+      this.color = instance.color;
+      this.link = instance.link;
+
+      instance.pageLinks = this.generateInternalLinks();
+
+      this.pageLinks = instance.pageLinks;
+
+      return instance;
     }
 
-    protected abstract setPageLink (): Link|undefined;
+    protected abstract generateInternalLinks(): Link[];
 }
