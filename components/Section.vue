@@ -30,45 +30,46 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { Vue, Component, Prop } from 'vue-property-decorator'
 import Color from 'chroma-js'
 import dynamicBanner from '@/mixins/dynamicBanner'
 import BaseResource from '@/models/base/BaseResource'
+import Link from '@/models/Link'
 
-export default {
-  mixins: [dynamicBanner],
-  props: {
-    data: {
-      type: [BaseResource, Object],
-      required: true
-    },
-    glow: Boolean
-  },
-  data () {
+@Component({ mixins: [dynamicBanner] })
+export default class extends Vue {
+  @Prop({ type: BaseResource, required: true })
+  readonly data!: BaseResource;
+
+  @Prop({ type: Boolean, default: false })
+  readonly glow!: Boolean;
+
+  internalLinks: Link[] = [];
+
+  get links (): Link[] {
+    const external = this.data.link ? [this.data.link] : []
+    return [...external, ...this.internalLinks]
+  }
+
+  get colorEntity () {
+    return Color(this.data.color ?? 'white')
+  }
+
+  get bannerColor () {
+    return this.colorEntity.hex()
+  }
+
+  get bannerImage () {
+    return this.data.image
+  }
+
+  get boxStyle (): any {
     return {
-      internalLinks: []
+      boxShadow: this.glow ? `0 10px 40px ${this.colorEntity.alpha(0.7)}` : null
     }
-  },
-  computed: {
-    links () {
-      const external = this.data.link ? [this.data.link] : []
-      return [...external, ...this.internalLinks]
-    },
-    colorEntity () {
-      return Color(this.data.color ?? 'white')
-    },
-    bannerColor () {
-      return this.colorEntity.hex()
-    },
-    bannerImage () {
-      return this.data.image
-    },
-    boxStyle () {
-      return {
-        boxShadow: this.glow ? `0 10px 40px ${this.colorEntity.alpha(0.7)}` : null
-      }
-    }
-  },
+  }
+
   mounted () {
     this.internalLinks = [
       this.data.pageLink

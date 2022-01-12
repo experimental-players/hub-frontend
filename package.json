@@ -10,8 +10,8 @@
     "lint": "eslint --fix --ext \".js,.vue,.ts\" --ignore-path .gitignore .",
     "test": "jest"
   },
-  "engines" : {
-    "node" : ">=16"
+  "engines": {
+    "node": ">=16"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
@@ -43,6 +43,7 @@
     "ts-jest": "^27.0.3",
     "typescript": "^4.3.5",
     "vue-jest": "^3.0.4",
+    "vue-property-decorator": "^9.1.2",
     "vuex-property-decorators": "^0.1.0"
   }
 }
