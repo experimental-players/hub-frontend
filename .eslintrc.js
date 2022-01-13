@@ -20,6 +20,7 @@ module.exports = {
     'arrow-parens': 'off',
     'operator-linebreak': 'off',
     'prefer-regex-literals': 'warn',
-    curly: 'off'
+    curly: 'off',
+    'vue/no-v-html': 'off'
   }
 }
