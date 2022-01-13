@@ -2,11 +2,7 @@
   <div class="main box is-block section my-6 banner" :class="{'gradient-border': withGradientBorder}" :style="[bannerStyle, boxStyle]">
     <div class="columns is-vcentered">
       <div v-if="data.icon" class="column is-one-fifth">
-        <figure class="box is-inline-block has-shadow">
-          <p class="image is-64x64">
-            <img :src="data.icon">
-          </p>
-        </figure>
+        <Icon :src="data.icon" />
       </div>
 
       <div class="column">

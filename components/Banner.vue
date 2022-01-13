@@ -3,11 +3,7 @@
     <div class="hero-body">
       <div class="container">
         <div v-if="data.icon" class="column is-one-fifth">
-          <figure class="box is-inline-block has-shadow">
-            <p class="image is-64x64">
-              <img :src="data.icon" />
-            </p>
-          </figure>
+          <Icon :src="data.icon" />
         </div>
         <h1
           class="title is-0"
