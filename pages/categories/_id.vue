@@ -1,6 +1,6 @@
 <template>
   <div v-if="selectedCategory" class="has-background-dark">
-    <Banner :data="selectedCategory" :glow="false" class="pb-intersection clipped-banner" />
+    <Banner :data="selectedCategory" glow class="pb-intersection clipped-banner" />
 
     <div class="container is-rounded mt-negative-intersection pb-medium">
       <div class="px-4 py-2">
