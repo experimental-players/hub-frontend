@@ -1,25 +1,20 @@
-import { BuildableResource, Properties } from 'tapi.js';
-
 import Link from '@/models/Link';
-import { fixColorString } from '@/helpers/colors';
+import BaseResource from '@/models/base/BaseResource';
 
-@Properties.Resource
-export default class Category extends BuildableResource {
-  public id: string = '';
+export default class Category extends BaseResource {
+  constructor () {
+    super();
 
-  @Properties.Alias('codename')
-  public code: string = '';
+    this.build
+      .alias('fullname', 'title')
+      .alias('codename', 'code')
+      .alias('urlLogo', 'icon')
+      .alias('urlBg', 'image')
+  }
 
-  @Properties.Alias('fullname')
-  public title: string = '';
-
-  public description: string = '';
-
-  public icon: string = '';
-  public image: string = '';
-
-  @Properties.Transform(fixColorString, (c: string) => c.replace('#', ''))
-  public color: string = '';
-
-  public link?: Link = undefined; // TODO Assign this to something
+  protected override generateInternalLinks (): Link[] {
+    return [
+      new Link('Explore', '/categories/' + this.id)
+    ]
+  }
 }

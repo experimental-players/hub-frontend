@@ -1,5 +1,4 @@
 <template>
-  <!-- <component :is="c" :href="link.href" :to="link.href" class="button is-light is-medium has-text-bold is-rounded" v-text="link.title"></component> -->
   <component :is="linkType" :to="to.href" :href="to.href" :target="target" v-text="to.title" />
 </template>
 

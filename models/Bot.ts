@@ -1,20 +1,18 @@
-import { BuildableResource, Properties } from 'tapi.js';
-import Link from '@/models/Link';
-import { fixColorString } from '@/helpers/colors';
+import Link from './Link';
+import BaseResource from '@/models/base/BaseResource';
 
-@Properties.Resource
-export default class Bot extends BuildableResource {
-  public id: string = '';
+export default class Bot extends BaseResource {
+  constructor () {
+    super();
 
-  @Properties.Alias('name')
-  public title: string = '';
+    this.build
+      .alias('name', 'title')
+      .alias('projectUrl', 'link')
+  }
 
-  public description: string = '';
-
-  @Properties.Transform(fixColorString, (c: string) => c.replace('#', ''))
-  public color: string = '';
-
-  @Properties.Alias('projectUrl')
-  @Properties.Transform(url => new Link('Project URL', url), (link: Link) => link.href)
-  public link?: Link = undefined;
+  protected override generateInternalLinks (): Link[] {
+    return [
+      // new Link('Configure', '#')
+    ]
+  }
 }

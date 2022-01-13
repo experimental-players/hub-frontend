@@ -7,9 +7,11 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate --target static",
-    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
-    "lint": "npm run lint:js",
+    "lint": "eslint --fix --ext \".js,.vue,.ts\" --ignore-path .gitignore .",
     "test": "jest"
+  },
+  "engines": {
+    "node": ">=16"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
@@ -25,6 +27,7 @@
     "@nuxtjs/eslint-config-typescript": "^6.0.1",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/google-fonts": "^1.3.0",
+    "@nuxtjs/markdownit": "^2.0.0",
     "@nuxtjs/style-resources": "^1.2.0",
     "@types/chroma-js": "^2.1.3",
     "@vue/test-utils": "^1.2.1",
@@ -35,6 +38,7 @@
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-vue": "^7.12.1",
     "jest": "^27.0.5",
+    "nuxt-property-decorator": "^2.9.1",
     "sass": "^1.37.0",
     "sass-loader": "^10.2.0",
     "tapi.js": "^0.4.1",

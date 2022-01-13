@@ -1,14 +1,20 @@
-import { BuildableResource, Properties } from 'tapi.js';
+import Link from './Link';
+import BaseResource from '@/models/base/BaseResource';
 
-@Properties.Resource
-export default class Project extends BuildableResource {
-  public id: string = '';
+export default class Project extends BaseResource {
+  constructor () {
+    super();
 
-  @Properties.Alias('codename')
-  public code: string = '';
+    this.build
+      .alias('fullname', 'title')
+      .alias('codename', 'code')
+      .alias('urlLogo', 'icon')
+      .alias('urlBg', 'image')
+  }
 
-  @Properties.Alias('fullname')
-  public title: string = '';
-
-  public description: string = '';
+  protected override generateInternalLinks (): Link[] {
+    return [
+      // new Link('Docs', '#')
+    ]
+  }
 }

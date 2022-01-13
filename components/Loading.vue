@@ -2,7 +2,7 @@
   <div v-if="loading" class="loading-page hero is-fullheight is-dark is-bold">
     <div class="hero-body container">
       <div>
-        <img src="https://static.experimentalplayers.org/loading.gif" />
+        <img src="https://static.experimentalplayers.org/loading.gif">
         <p class="has-text-centered">
           Loading...
         </p>

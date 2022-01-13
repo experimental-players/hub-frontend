@@ -6,8 +6,6 @@ export default {
 
   buildDir: 'bundle',
 
-  globalName: 'app',
-
   env: {
     api: {
       url: process.env.API_URL || '0.0.0.0:8080'
@@ -68,7 +66,9 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    // https://openbase.com/js/@nuxtjs/markdownit/documentation
+    '@nuxtjs/markdownit'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -103,7 +103,19 @@ export default {
 
   loading: '@/components/Loading',
 
+  markdownit: {
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    runtime: true
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extend (config, ctx) {
+      if (ctx.isDev) {
+        config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
+      }
+    }
   }
 }
