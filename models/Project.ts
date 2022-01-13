@@ -14,7 +14,7 @@ export default class Project extends BaseResource {
 
   protected override generateInternalLinks (): Link[] {
     return [
-      new Link('Docs', '#')
+      // new Link('Docs', '#')
     ]
   }
 }

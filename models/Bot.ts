@@ -12,7 +12,7 @@ export default class Bot extends BaseResource {
 
   protected override generateInternalLinks (): Link[] {
     return [
-      new Link('Configure', '#')
+      // new Link('Configure', '#')
     ]
   }
 }
