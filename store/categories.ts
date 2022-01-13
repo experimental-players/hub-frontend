@@ -20,7 +20,7 @@ export const mutations: MutationTree<ProjectsState> = {
     });
   },
   SAVE_SELECTED_CATEGORY (state, newSelectedCategory: any) {
-    state.selectedCategory = new Category().fromJSON(newSelectedCategory)
+    state.selectedCategory = { ...new Category().fromJSON(newSelectedCategory) } as Category;
   }
 }
 
