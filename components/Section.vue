@@ -1,6 +1,6 @@
 <template>
-  <div class="main box is-block section my-6 banner" :class="{'gradient-border': withGradientBorder}" :style="[bannerStyle, boxStyle]">
-    <div class="columns is-vcentered">
+  <div class="main box is-block section my-6 banner" :style="[bannerStyle, boxStyle]">
+    <div class="columns is-vcentered is-desktop">
       <div v-if="data.icon" class="column is-one-fifth">
         <Icon :src="data.icon" :class="{ glowing: glow }" />
       </div>
@@ -17,7 +17,7 @@
             <Link
               v-if="link"
               :to="link"
-              class="button is-light is-medium has-text-bold is-rounded mx-2"
+              class="button is-light is-medium has-text-bold is-rounded mx-2 my-1"
               :class="{ glowing: glow }"
             />
           </span>
