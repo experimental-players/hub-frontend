@@ -1,9 +1,9 @@
 <template>
-  <div v-if="selectedCategory" class="has-background-dark">
+  <div v-if="selectedCategory">
     <Banner :data="selectedCategory" :glow="false" class="pb-intersection clipped-banner" />
 
     <div class="container is-rounded mt-negative-intersection pb-medium">
-      <div class="section is-rounded hero is-dark is-bold is-small description-box">
+      <div class="section is-rounded hero is-dark is-bold is-small description-box mb-4">
         <div class="hero-body">
           <div class="container">
             <p class="subtitle is-6">
