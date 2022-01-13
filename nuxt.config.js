@@ -66,7 +66,9 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    // https://openbase.com/js/@nuxtjs/markdownit/documentation
+    '@nuxtjs/markdownit'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -100,6 +102,13 @@ export default {
   },
 
   loading: '@/components/Loading',
+
+  markdownit: {
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    runtime: true
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
