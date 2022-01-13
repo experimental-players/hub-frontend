@@ -1,5 +1,5 @@
 <template>
-  <div class="has-background-dark" v-if="selectedCategory">
+  <div v-if="selectedCategory" class="has-background-dark">
     <Banner :data="selectedCategory" :glow="false" class="pb-intersection clipped-banner" />
 
     <div class="container is-rounded mt-negative-intersection pb-medium">
@@ -14,7 +14,7 @@
       </div>
 
       <div class="is-rounded has-background-light main-page-content">
-        <div class="section content" v-html="$md.render(selectedCategory.description)"></div>
+        <div class="section content" v-html="$md.render(selectedCategory.description)" />
       </div>
     </div>
   </div>
