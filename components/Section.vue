@@ -2,7 +2,7 @@
   <div class="main box is-block section my-6 banner" :class="{'gradient-border': withGradientBorder}" :style="[bannerStyle, boxStyle]">
     <div class="columns is-vcentered">
       <div v-if="data.icon" class="column is-one-fifth">
-        <Icon :src="data.icon" />
+        <Icon :src="data.icon" :class="{ glowing: glow }" />
       </div>
 
       <div class="column">
@@ -18,6 +18,7 @@
               v-if="link"
               :to="link"
               class="button is-light is-medium has-text-bold is-rounded mx-2"
+              :class="{ glowing: glow }"
             />
           </span>
         </div>
@@ -79,11 +80,19 @@ export default class extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.main {
+  border-radius: 1em;
+}
+
 .gradient-border {
   border-style: solid;
   border-width: 7px;
-  border-radius: 0;
+  border-radius: 0 !important;
   background-clip: padding;
   border-image: linear-gradient( 69.7deg,  rgba(244,37,243,1) 1.4%, rgba(244,87,1,1) 36.2%, rgba(255,204,37,1) 72.2%, rgba(20,196,6,1) 113% ) 1;
+}
+
+.glowing {
+  box-shadow: 0 0 40px 0 rgba(255, 255, 255, 0.473);
 }
 </style>

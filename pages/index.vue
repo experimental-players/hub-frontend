@@ -19,6 +19,7 @@
             v-for="(category, n) in everyCategory"
             :key="n"
             :data="category"
+            glow
           />
         </div>
       </div>
