@@ -4,7 +4,7 @@
       <div v-if="data.icon" class="column is-one-fifth">
         <figure class="box is-inline-block has-shadow">
           <p class="image is-64x64">
-            <img :src="icon">
+            <img :src="data.icon">
           </p>
         </figure>
       </div>

@@ -8,6 +8,8 @@ export default class Project extends BaseResource {
     this.build
       .alias('fullname', 'title')
       .alias('codename', 'code')
+      .alias('urlLogo', 'icon')
+      .alias('urlBg', 'image')
   }
 
   protected override generateInternalLinks (): Link[] {
